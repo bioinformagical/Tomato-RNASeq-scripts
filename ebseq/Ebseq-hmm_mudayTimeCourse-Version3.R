@@ -1,0 +1,129 @@
+### Installing Required Packages (only done once)
+#source("https://bioconductor.org/biocLite.R")
+BiocManager::install("EBSeq")
+BiocManager::install("EBSeqHMM")
+install.packages("blockmodeling")
+install.packages("tidyverse")
+
+### Load Required Pacakges
+library(RColorBrewer)
+library(EBSeq)
+library(EBSeqHMM)
+library(tidyverse)
+#install.packages("datawizard")
+library(datawizard)
+
+## The Purge
+rm(list = ls())
+
+### Set WorkDir and load my own R functions
+setwd("/Users/robreid/Dropbox (UNC Charlotte)/R/EB-seq_Muday_timecourse/")
+#source("/Users/robreid/Dropbox (UNC Charlotte)/R/EB-seq_Muday_timecourse/RNAseq_fnxs.R")
+
+
+##Load data first
+## Based on vignette:   https://www.biostat.wisc.edu/~ningleng/EBSeqHMM/EBSeqHMM_vignette_v1.pdf
+rawCounts = read_delim('/Users/robreid/bitbucket/flavonoid-rnaseq/72_F3H_PollenTube/results/muday-144-SL4_counts-salmon.txt',delim="\t", col_names = TRUE)
+str(rawCounts)
+
+## save description
+desc = rawCounts$description
+geneid=rawCounts$gene_name
+
+#### Need to make a "Conditions" Vector that describes what time point each 
+###
+###.   THAT THIS MIGHT BREAK ON OTHER INPUT DATA, WE END UP SORTING ALPHABETICAL
+###
+###
+CondVector=c("T15","T15","T15","T30","T30","T30","T45","T45","T45","T75","T75","T75")
+print(CondVector)
+#making time points for each of the samples
+Conditions=factor(CondVector, levels=c("T15","T30","T45","T75"))
+str(Conditions)
+#Downstream analysis by EBSeq-HMM requires the conditions to be specified as a factor. In particular,
+#levels of the factor need to be sorted along the time/spatial course
+levels(Conditions)
+
+###### Choosing a subset via Tidyverse!!!
+x = as_tibble(rawCounts)
+a28<-select(x,matches("A.28"))
+a34<-select(x,matches("A.34"))
+v28<-select(x,matches("V.28"))
+v34<-select(x,matches("V.34"))
+f28<-select(x,matches("F.28"))
+f34<-select(x,matches("F.34"))
+
+##Make a function to run EBseq-HMM
+fetch_UPDownGeneCalls <- function(tibby,condy) {
+  dim(tibby)
+  tibby <- tibby[,order(colnames(tibby))]  ##Reordering the columns to match the conditions
+  mat <- as.data.frame(tibby)
+  rownames(mat) <- geneid
+  head(mat)
+  Sizes=MedianNorm(mat)
+  qSizes=QuantileNorm(mat,.75)
+  print(qSizes)
+  GeneNormData=GetNormalizedMat(mat, Sizes)
+  EBSeqHMMGeneOut=EBSeqHMMTest(Data=data.matrix(mat), sizeFactors=Sizes, Conditions=condy,UpdateRd=50)
+  dim(EBSeqHMMGeneOut)
+  GeneDECalls=GetDECalls(EBSeqHMMGeneOut, FDR=.05)
+  
+  #print the gene COnf calls summary
+  GeneConfCalls=GetConfidentCalls(EBSeqHMMGeneOut, FDR=.05,cutoff=.5, OnlyDynamic=F)
+  print(GeneConfCalls$NumEach) ##We print these, but results are not returned. Should make a separate function.
+  list_data <- list(GeneDECalls,GeneConfCalls$NumEach,GeneNormData)
+  return(list_data)
+}
+
+## Run each of the experimental conditions.
+a28gc <- fetch_UPDownGeneCalls(a28,Conditions)
+a34gc <- fetch_UPDownGeneCalls(a34,Conditions)
+v28gc <- fetch_UPDownGeneCalls(v28,Conditions)
+v34gc <- fetch_UPDownGeneCalls(v34,Conditions)
+f28gc <- fetch_UPDownGeneCalls(f28,Conditions)
+f34gc <- fetch_UPDownGeneCalls(f34,Conditions)
+
+## Grabbing the 1st element in the ebseq object for writing out to tab delimited table.
+a28df <- data.frame (a28gc[1])
+a34df <- data.frame (a34gc[1])
+v28df <- data.frame (v28gc[1])
+v34df <- data.frame (v34gc[1])
+f28df <- data.frame (f28gc[1])
+f34df <- data.frame (f34gc[1])
+
+write_delim(rownames_to_column(a28df), file=sprintf("a28_ebseq-SL4.txt"),col_names = TRUE,delim='\t')
+write_delim(rownames_to_column(a34df), file=sprintf("a34_ebseq-SL4.txt"),col_names = TRUE,delim='\t')
+write_delim(rownames_to_column(v28df), file=sprintf("v28_ebseq-SL4.txt"),col_names = TRUE,delim='\t')
+write_delim(rownames_to_column(v34df), file=sprintf("v34_ebseq-SL4.txt"),col_names = TRUE,delim='\t')
+write_delim(rownames_to_column(f28df), file=sprintf("f28_ebseq-SL4.txt"),col_names = TRUE,delim='\t')
+write_delim(rownames_to_column(f34df), file=sprintf("f34_ebseq-SL4.txt"),col_names = TRUE,delim='\t')
+
+## Write out Number of genes per path for each expt
+write.table(a28gc[2], file=sprintf("a28gc_numIneachPath-SL4.txt"))
+write.table(a34gc[2], file=sprintf("a34gc_numIneachPath-SL4.txt"))
+write.table(v28gc[2], file=sprintf("v28gc_numIneachPath-SL4.txt"))
+write.table(v34gc[2], file=sprintf("v34gc_numIneachPath-SL4.txt"))
+write.table(f28gc[2], file=sprintf("f28gc_numIneachPath-SL4.txt"))
+write.table(f34gc[2], file=sprintf("f34gc_numIneachPath-SL4.txt"))
+
+
+## This will get every gene that has some sort of pattern from all of the experiments and make it a tibble.                
+allrows <- c(rownames(a28df),rownames(v28df),rownames(f28df),rownames(v34df),rownames(a34df),rownames(f34df))
+x <- allrows[!duplicated(allrows)]
+allrows <- tibble(x)
+allrows <- allrows %>% rename("solyID" = x)
+## Need to add results from each experiment as a column with the experiment name (and change the SoyID row name too).
+a28x <- rownames_to_column(a28df, var = "solyID") %>% mutate(experiment = "a28")
+a34x <- rownames_to_column(a34df, var = "solyID") %>% mutate(experiment = "a34")
+v28x <- rownames_to_column(v28df, var = "solyID") %>% mutate(experiment = "v28")
+v34x <- rownames_to_column(v34df, var = "solyID") %>% mutate(experiment = "v34")
+f28x <- rownames_to_column(f28df, var = "solyID") %>% mutate(experiment = "f28")
+f34x <- rownames_to_column(f34df, var = "solyID") %>% mutate(experiment = "f34")
+
+#We combine all of these results into 1 Long data frame.
+tmp <- bind_rows(list(a28x, a34x, f28x, f34x,v28x,v34x))
+# We then use tidyverse magic to pivot the many rows to many columns, 1 for each Expt.
+fulltable <- pivot_wider(tmp, names_from="experiment", values_from = Most_Likely_Path, values_fill = NA)
+
+write.table(fulltable, file=sprintf("ebseq_fullTable_muday144.txt"),col.names=NA)
+
