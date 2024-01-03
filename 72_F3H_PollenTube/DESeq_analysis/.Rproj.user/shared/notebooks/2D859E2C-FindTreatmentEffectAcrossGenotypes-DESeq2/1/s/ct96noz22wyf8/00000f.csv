@@ -1,0 +1,3 @@
+"0","combined_results <- rbind(res15, res30, res45, res75)"
+"0","SL4 <- combined_results[,1]"
+"0","SL5 <- combined_results[,2]"

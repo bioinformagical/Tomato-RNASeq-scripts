@@ -1,0 +1,219 @@
+---
+title: "Assessing flavanone 3 beta-hydroxylase (F3H) expression using scaled RNA-Seq counts per million (cpm) measurements"
+author: Ann Loraine
+date: June 12, 2023
+output:
+  pdf_document: default
+  #html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+* * *
+
+# Introduction
+
+```{r include=FALSE}
+sl4_input_fname="results/muday-144-SL4_counts-salmon.txt"
+sl4_output_fname = "results/muday-144-SL4_counts-salmon_scaled.txt"
+sl5_input_fname="results/muday-144-SL5_counts-salmon.txt"
+sl5_output_fname = "results/muday-144-SL5_counts-salmon_scaled.txt"
+sl4_g="Solyc02g083860.3"
+sl5_g="PRAM_26184"
+```
+
+This Markdown uses scaled RNA-Seq counts data to assess expression of `r sl4_g` and `r sl5_g`, encoding flavanone 3-dioxygenase (F3H) from tomato genome assemblies SL4 and SL5, respectively, in tomato pollen tubes germinated *in vitro* and undergoing a heat stress treatment lasting 15, 30, 45, and 75 minutes.
+
+A genome-wide, scaled counts data containing scaled expression data for these genes and all other genes in the SL4 and SL5 genome assemblies will be saved to files named ``r sl4_output_fname`` and ``r sl5_output_fname``.
+
+For more information about this gene, see its NCBI sequence record:
+
+* https://www.ncbi.nlm.nih.gov/protein/NP_001316412.1
+
+## Background
+
+Previously, we found that F3H expression was higher in mutant genotype `are,` in which the F3H gene (encoded by ``r sl4_g`` in assembly SL4 and by ``r sl4_g`` in assembly SL5) contains a point mutation and produces an inactive protein. Also, we found that two over-expression lines exhibited no elevated expression compared to their wild-type, non-transgenic progenitor line `VF36`. The previous experiment tested gene expression after 2 hours of heat treatment. The data set analyzed here comes from heat-treated and control samples collected at 15, 30, 45, and 75 minutes of heat treatment. The analysis shown here will investigate if the previously observed trend with respect of F3H expression re-occurred in this new data set.
+
+* * *
+
+# Results
+
+Load functions:
+
+```{r}
+source("Common.R")
+```
+
+Read ``r sl4_input_fname`` and ``r sl5_input_fname`:
+
+```{r}
+sl4_unscaled=getCounts(assembly="SL4",keep_description = T)
+sl5_unscaled=getCounts(assembly="SL5",keep_description = T)
+```
+
+Load edgeR library:
+
+```{r message=FALSE, warning=FALSE}
+library(edgeR)
+```
+
+Scale the data using edgeR function `cpm`:
+
+```{r}
+description_index = which(names(sl4_unscaled)=="description")
+sl4_scaled = data.frame(cpm(sl4_unscaled[,-description_index]))
+sl4_scaled$description=sl4_unscaled$description
+description_index = which(names(sl5_unscaled)=="description")
+sl5_scaled = data.frame(cpm(sl5_unscaled[,-description_index]))
+sl5_scaled$description=sl5_unscaled$description
+```
+
+Create plot that shows scaled gene expression for SL4 gene ``r sl4_g``:
+
+```{r fig.height=11, fig.width=8, message=FALSE, warning=FALSE}
+oldpar=par()
+par(mfrow=c(4,1))
+scaled=sl4_scaled
+g = sl4_g
+v = colnames(scaled)
+indexes = c(grep("A.28.15",v),
+            grep("A.34.15",v),
+            grep("F.28.15",v),
+            grep("F.34.15",v),
+            grep("V.28.15",v),
+            grep("V.34.15",v))
+all = indexes
+makeBarPlot(g,scaled[,indexes],"Scaled counts",
+            beside=T,main=paste(g,"15 minutes"))
+indexes = c(grep("A.28.30",v),
+            grep("A.34.30",v),
+            grep("F.28.30",v),
+            grep("F.34.30",v),
+            grep("V.28.30",v),
+            grep("V.34.30",v))
+all = c(all,indexes)
+makeBarPlot(g,scaled[,indexes],"Scaled counts",
+            beside=T,main=paste(g,"30 minutes"))
+indexes = c(grep("A.28.45",v),
+            grep("A.34.45",v),
+            grep("F.28.45",v),
+            grep("F.34.45",v),
+            grep("V.28.45",v),
+            grep("V.34.45",v))
+all = c(all,indexes)
+makeBarPlot(g,scaled[,indexes],"Scaled counts",
+            beside=T,main=paste(g,"45 minutes"))
+indexes = c(grep("A.28.75",v),
+            grep("A.34.75",v),
+            grep("F.28.75",v),
+            grep("F.34.75",v),
+            grep("V.28.75",v),
+            grep("V.34.75",v))
+all = c(all,indexes)
+makeBarPlot(g,scaled[,indexes],"Scaled counts",
+            beside=T,main=paste(g,"75 minutes"))
+par(oldpar)
+```
+
+The preceding plots show the following aspects of SL4 ``r sl4_g`` gene expression:
+
+* At each treatment duration time point, expression was higher in the `are` mutant than in the wildtype and over-expression genotypes, as was observed previously.
+* At each time point, expression of the over-expression genotype was about the same as in the `VF36` genotype.
+* Heat stress did not appear to affect expression in any of the genotypes, at any of the treatment duration time points.
+
+Create plot that shows scaled gene expression for SL5 gene ``r sl5_g``:
+
+```{r fig.height=11, fig.width=8, message=FALSE, warning=FALSE}
+oldpar=par()
+par(mfrow=c(4,1))
+scaled=sl5_scaled
+g = sl5_g
+v = colnames(scaled)
+indexes = c(grep("A.28.15",v),
+            grep("A.34.15",v),
+            grep("F.28.15",v),
+            grep("F.34.15",v),
+            grep("V.28.15",v),
+            grep("V.34.15",v))
+all = indexes
+makeBarPlot(g,scaled[,indexes],"Scaled counts",
+            beside=T,main=paste(g,"15 minutes"))
+indexes = c(grep("A.28.30",v),
+            grep("A.34.30",v),
+            grep("F.28.30",v),
+            grep("F.34.30",v),
+            grep("V.28.30",v),
+            grep("V.34.30",v))
+all = c(all,indexes)
+makeBarPlot(g,scaled[,indexes],"Scaled counts",
+            beside=T,main=paste(g,"30 minutes"))
+indexes = c(grep("A.28.45",v),
+            grep("A.34.45",v),
+            grep("F.28.45",v),
+            grep("F.34.45",v),
+            grep("V.28.45",v),
+            grep("V.34.45",v))
+all = c(all,indexes)
+makeBarPlot(g,scaled[,indexes],"Scaled counts",
+            beside=T,main=paste(g,"45 minutes"))
+indexes = c(grep("A.28.75",v),
+            grep("A.34.75",v),
+            grep("F.28.75",v),
+            grep("F.34.75",v),
+            grep("V.28.75",v),
+            grep("V.34.75",v))
+all = c(all,indexes)
+makeBarPlot(g,scaled[,indexes],"Scaled counts",
+            beside=T,main=paste(g,"75 minutes"))
+par(oldpar)
+```
+
+The preceding plots show that ``r sl5_g``, the SL5 counterpart of SL4 gene ``r sl4_g``, 
+exhibited the same expression profile. 
+
+Write scaled data files:
+
+```{r}
+to_write = data.frame(gene_name=row.names(sl4_scaled))
+to_write=cbind(to_write,sl4_scaled[,all])
+to_write$description = sl4_scaled$description
+for (i in 2:(ncol(to_write)-1)) {
+  to_write[,i]=signif(to_write[,i],3)
+}
+write.table(to_write,file=sl4_output_fname,sep="\t",quote = F,
+            row.names = F,col.names = T)
+to_write = data.frame(gene_name=row.names(sl5_scaled))
+to_write=cbind(to_write,sl5_scaled[,all])
+to_write$description = sl5_scaled$description
+for (i in 2:(ncol(to_write)-1)) {
+  to_write[,i]=signif(to_write[,i],3)
+}
+write.table(to_write,file=sl5_output_fname,sep="\t",quote = F,
+            row.names = F,col.names = T)
+```
+
+
+The preceding code chunk wrote files named ``r sl4_output_fname`` and that ``r sl5_output_fname`` contains scaled gene expression values per gene for SL4 
+and SL5 assemblies, expressed in counts per million.
+
+* * *
+
+# Discussion
+
+The expression profile for `r sl4_g`/`r sl5_g` resembled the previously observed patterns in the following respects.
+
+As before, expression of `r sl4_g`/`r sl5_g` in the over-expression genotype relative to progenitor genotype VF36, a wildtype line, was not higher. Why not? 
+
+The *are* (anthocyanin reduced) genotype showed the highest expression of all three genotypes, as observed previously in the 120 minutes heat stress experiment. This suggests
+that transcriptional and/or post-transcriptional regulation of the flavonoid biosynthetic gene `r sl4_g`/`r sl5_g` is somehow able to respond to the levels of flavonoids produced, due to some as-yet unknown compensatory, regulatory mechanism. 
+
+* * *
+
+# Conclusion
+
+* Expression of `r sl4_g`/`r sl5_g` matched what was previously observed in `../ARE-120min-analysis/R3H.Rmd` and suggested that feedback mechanisms exist that control expression of the flavonoid biosynthetic pathway genes via products of the pathway itself.
+
+* Scaled expression files for SL4 and SL5 were written. 
+

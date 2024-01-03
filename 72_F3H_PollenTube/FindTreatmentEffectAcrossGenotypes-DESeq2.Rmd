@@ -1,0 +1,227 @@
+---
+title: "Find Treatment Effect Across Genotypes"
+author: "Molly Davis & Ann Loraine"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  # html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+* * *
+
+# Prelude - define variables
+
+```{r message=TRUE, warning=FALSE}
+assemblies=c("SL4","SL5")
+Q = 0.05
+lfcThreshold=0
+outfname_prefix="results/MvW-temp"
+```
+
+* * *
+
+# Introduction
+
+The following adapted from: https://jira.bioviz.org/browse/IGBF-3460
+
+We observed in previous work that VF36 and the F3H transgenic line have similar gene expression patterns. To understand how the _are_ mutant differs from wild-type based on the effect of temperature, we will focus on comparing the _are_ mutant to the VF36 cultivar under the temperature condition. This will be done with the use of an interaction term within the design of the analysis. The interaction term answers the question is the temperature condition effect *different* across genotypes?
+
+Goal: Find and interpret how gene expression in _are_ differs from gene expression in VF36 based on the temperature condition effect.
+
+Rationale: In the past we have been curious how gene expression is different across genotypes but also the temperature condition. We know that there are differences in expression between genotypes but is there a difference between temperature and genotypes simultaneously.   
+
+* * *
+
+# Results
+
+Load code:
+
+```{r message=FALSE, warning=FALSE}
+source("Common.R")
+library(DESeq2)
+```
+
+Read counts data for assemblies `r assemblies`:
+
+```{r}
+dfs = list()
+for (assembly in assemblies) {
+  dfs[[assembly]]=getCounts(assembly=assembly,
+                            keep_description = T)
+}
+```
+
+DESeq Function; Fit a model that compares _are_ to VF36 at specific time chunk with temperature condition:
+
+```{r message=FALSE, warning=FALSE}
+getDEgenes_time <- function(minute) {
+  ddss = list()
+  for (assembly in assemblies) {
+    d = dfs[[assembly]]
+    desc_index = which(names(d)=="description")
+    d = d[,-desc_index]
+    toks = strsplit(names(d),"\\.")
+    genotype=sapply(toks,function(x){x[[1]]})
+    temperature=sapply(toks,function(x){x[[2]]})
+    time=sapply(toks,function(x){x[[3]]})
+    v = genotype%in%c("A","V")&time==minute
+    d = d[,v]
+    coldata=data.frame(genotype=factor(genotype[v],levels=c("V","A")),
+                       temperature=factor(temperature[v], levels = c("28","34"))) 
+    row.names(coldata)=names(d)
+    cts = round(as.matrix(d))
+    dds = DESeqDataSetFromMatrix(countData=cts,
+                                 colData=coldata,
+                                  design=~genotype + temperature + genotype:temperature) 
+    featureData = data.frame(gene=rownames(cts))
+    mcols(dds) = DataFrame(mcols(dds), featureData)
+    dds = DESeq(dds, minReplicatesForReplace=Inf)
+    ddss[[assembly]]=dds
+  }
+  return(ddss)
+}
+```
+
+Collect results function:
+
+```{r}
+results_time <- function(ddss, minute) {
+  rss=list()
+  for (assembly in assemblies) {
+  dds=ddss[[assembly]]
+    rs = results(dds,alpha=Q,lfcThreshold = lfcThreshold,
+                  name="genotypeA.temperature34") 
+    rs = rs[!is.na(rs$padj),]
+    rs=cbind(gene=row.names(rs),rs)
+    rs["time"] = minute 
+    rs$description = dfs[[assembly]][rs$gene,"description"]
+    if (assembly == "SL5") {
+      SL4_gene_names = getSL4GeneNames(rs$description)
+      rs$SL4 = SL4_gene_names
+    }
+    o = order(rs$pvalue)
+    rs = rs[o,]
+    rss[[assembly]]=data.frame(rs)
+  }
+  return(rss)
+}
+```
+
+# 15 minute Results
+```{r message=FALSE}
+min15 <- getDEgenes_time(15)
+res15 <- results_time(min15, 15)
+```
+The previous code chunk collected genes for SL4 and SL5 at 15 minutes that differed
+by log2 fold-change of `r lfcThreshold` or greater between VF36 and 
+_are_ with a temperature comparison and where the comparisons had adjusted p value less than
+or equal to `r prettyNumber(Q)`. 
+
+# 30 minutes Results
+```{r message=FALSE}
+min30 <- getDEgenes_time(30)
+res30 <- results_time(min30, 30)
+```
+The previous code chunk collected genes for SL4 and SL5 at 30 minutes that differed
+by log2 fold-change of `r lfcThreshold` or greater between VF36 and 
+_are_ with a temperature comparison and where the comparisons had adjusted p value less than
+or equal to `r prettyNumber(Q)`. 
+
+# 45 minutes Results
+```{r message=FALSE}
+min45 <- getDEgenes_time(45)
+res45 <- results_time(min45, 45)
+```
+The previous code chunk collected genes for SL4 and SL5 at 45 minutes that differed
+by log2 fold-change of `r lfcThreshold` or greater between VF36 and 
+_are_ with a temperature comparison and where the comparisons had adjusted p value less than
+or equal to `r prettyNumber(Q)`. 
+
+# 75 minutes Results 
+```{r message=FALSE}
+min75 <- getDEgenes_time(75)
+res75 <- results_time(min75, 75)
+```
+The previous code chunk collected genes for SL4 and SL5 at 75 minutes that differed
+by log2 fold-change of `r lfcThreshold` or greater between VF36 and 
+_are_ with a temperature comparison and where the comparisons had adjusted p value less than
+or equal to `r prettyNumber(Q)`. 
+
+Combine the dataframes 
+```{r message=FALSE}
+combined_results <- rbind(res15, res30, res45, res75)
+SL4 <- combined_results[,1]
+SL5 <- combined_results[,2]
+```
+The previous code chunk collected genes for SL4 and SL5 across all times.
+
+
+# View and Save the Results 
+
+Examine results by assembly, starting with `SL4`. Also, write a file with results.
+
+```{r}
+library(openxlsx)
+assembly="SL4"
+outfname=paste0(outfname_prefix,"-",assembly,".xlsx")
+data_frames <- list("15 minutes" = SL4$res15, "30 minutes" = SL4$res30, 
+                    "45 minutes" = SL4$res45,"75 minutes" = SL4$res75 )
+write.xlsx(data_frames, file = outfname)
+```
+
+Results for `r assembly`:
+
+Comparing _are_ to VF36, with a temperature condition, 
+
+15 minutes: identified `r prettyNumber(sum(SL4$res15$padj<=Q))` differentially expressed genes from assembly `r assembly` for 15 minute experiments. Results were written to file `r outfname`.
+
+30 minutes: identified `r prettyNumber(sum(SL4$res30$padj<=Q))` differentially expressed genes from assembly `r assembly` for just 30 minute experiments. Results were written to file `r outfname`.
+
+45 minutes: identified `r prettyNumber(sum(SL4$res45$padj<=Q))` differentially expressed genes from assembly `r assembly` for just 45 minute experiments. Results were written to file `r outfname`.
+
+75 minutes: identified `r prettyNumber(sum(SL4$res75$padj<=Q))` differentially expressed genes from assembly `r assembly` for just 75 minute experiments. Results were written to file `r outfname`.
+
+```{r}
+assembly="SL5"
+outfname=paste0(outfname_prefix,"-",assembly,".xlsx")
+data_frames <- list("15 minutes" = SL5$res15, "30 minutes" = SL5$res30, 
+                    "45 minutes" = SL5$res45,"75 minutes" = SL5$res75 )
+write.xlsx(data_frames, file = outfname)
+```
+
+Results for `r assembly`:
+
+Comparing _are_ to VF36, with a temperature condition, 
+
+15 minutes: identified `r prettyNumber(sum(SL5$res15$padj<=Q))` differentially expressed genes from assembly `r assembly` for 15 minute experiments. Results were written to file `r outfname`.
+
+30 minutes: identified `r prettyNumber(sum(SL5$res30$padj<=Q))` differentially expressed genes from assembly `r assembly` for just 30 minute experiments. Results were written to file `r outfname`.
+
+45 minutes: identified `r prettyNumber(sum(SL5$res45$padj<=Q))` differentially expressed genes from assembly `r assembly` for just 45 minute experiments. Results were written to file `r outfname`.
+
+75 minutes: identified `r prettyNumber(sum(SL5$res75$padj<=Q))` differentially expressed genes from assembly `r assembly` for just 75 minute experiments. Results were written to file `r outfname`.
+
+* * *
+
+# Discussion
+
+The linear model allowed us to identify 6 genes whose expression in the temperature differed between VF36 and _are_ samples compared with the temperature effect with a log2FC threshold of 0. The log2FC threshold was changed to 0 due to there not being enough DE genes available for analysis. This means we are allowing for a less strict approach when it comes to looking at DE genes that are taken from a more complicated analysis. The analysis design is asking for there to be significance in the difference in genotypes *and* temperatures for there to be DE genes present. While if there was no interaction term present in the design, then we would be asking for genoytype *or* temperature differences. With the interaction, performing the analysis of both factors and pulling the results becomes much easier. Thus, answering the question, is the temperature condition effect *different* across genotypes?
+
+* * *
+
+# Conclusions
+
+* Six genes were differently expressed at 30 minutes between _are_ and VF36 were identified under the effect of temperature with a log2FC of 0.
+* Files were written to the "results" directory for the two genotypes (MvW-temp-SL4.xlsx & MvW-temp-SL5.xlsx).
+
+* * * 
+# Session Info
+
+```{r}
+sessionInfo()
+```

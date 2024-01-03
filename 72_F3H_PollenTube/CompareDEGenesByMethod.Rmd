@@ -1,0 +1,243 @@
+---
+title: "Compare DE genes found by edgeR and DESeq2 in treatment versus control comparison using the same reference genome assembly"
+author: "Ann Loraine"
+date: "`r Sys.Date()`"
+output:
+  pdf_document: default
+  # html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+* * *
+
+# Prelude - Define variables
+
+```{r}
+output_fname_prefix = "results/CvT-compare-"
+output_fname_suffix = ".txt"
+assemblies = c("SL4","SL5")
+methods = c("edgeR","DESeq2")
+```
+
+* * *
+
+# Introduction
+
+This Markdown compares edgeR to DESeq2 differential expression results across assemblies SL4 and SL5. 
+
+SL4 corresponds to IGB Quickload S_lycopersicum_Sep_2019 and SL5 corresponds to IGB Quickload S_lycopersicum_Jun_2022.
+
+Questions:
+
+* How similar or different were the differential expression results found by edgeR and DESeq2 differential expression analyses?
+
+To answer the question, output a data file suitable for an analyst to open, explore, and analyze using Excel.
+
+Summarize the file structure, such as column headings and their meanings, in the Discussion section below.
+
+* * *
+
+# Analysis and Results
+
+Load custom functions for analyzing and visualizing differential expression:
+
+```{r message=FALSE, warning=FALSE}
+source("Common.R")
+```
+
+Load required edgeR and DESeq2 generated data:
+
+```{r}
+dfs=list()
+for (method in methods) {
+  for (assembly in assemblies) {
+    thing = getCvS(method=method,assembly=assembly,
+                   standardize=T)
+    thing$comp = paste(thing$group1,thing$group2,
+                      sep="-")
+    key = paste(method,assembly,sep=".")
+    row.names(thing)=paste(thing$comp,thing$gene,sep=".")
+    dfs[[key]]=thing
+  }
+}
+```
+
+In the previous code chunk, we loaded `r length(dfs)` differential expression results sets into memory.
+
+Define false discovery rate cutoff variable "Q" for deciding differential expression.
+
+```{r}
+Q = 0.05
+```
+
+The above value of `r Q` represents our target fraction of false discoveries within a results data set. 
+
+Report the number of test results obtained per comparison:
+
+```{r}
+for (key in names(dfs)) {
+  thing = dfs[[key]]
+  print("COMPARISON")
+  print(key)
+  print(table(thing$comp))
+}
+```
+
+The preceding code chunk shows the number of tests performed by each method, and each genome assembly.
+
+Now, show how many tests had adjusted p value of `r Q`
+or smaller.
+
+DE genes found by method, assembly:
+
+```{r}
+for (key in names(dfs)) {
+  thing = dfs[[key]]
+  print("COMPARISON")
+  print(key)
+  v = thing$padj<=Q
+  print(table(thing$comp[v]))
+}
+```
+
+
+As shown in the above output, the edgeR method called more genes as differentially expressed than the DESeq2 method did for most of the 
+treatment duration time points. 
+
+Both methods computed log2 fold-changes and nominal p values for the comparisons. How similar were these values among the genes found to be differentially expressed?
+
+For genes present in edgeR and DESeq2 results sets, show the correlation (if any) between log2 fold-change and nominal p values produced by the two methods.
+
+Compare nominal p values:
+
+```{r}
+assembly_synonyms = c("S_lycopersicum_Sep_2019",
+                      "S_lycopersicum_Jun_2022")
+names(assembly_synonyms)=assemblies
+for (assembly in assemblies) {
+  key1 = paste(methods[1],assembly,sep=".")
+  key2 = paste(methods[2],assembly,sep=".")
+  thing1 = dfs[[key1]]
+  thing2 = dfs[[key2]]
+  v = intersect(row.names(thing1),row.names(thing2))
+  plot(-log10(thing1[v,"pvalue"]),
+       -log10(thing2[v,"pvalue"]),
+       xlab=paste("-log10 pvalue",methods[1]),
+       ylab=paste("-log10 pvalue",methods[2]),
+       main=paste(assembly,assembly_synonyms[assembly],sep=" - "),
+       pch="x")
+}
+```
+
+The above plot shows a pretty good correspondence between p values calculated by the two methods.
+
+Examine correspondence of fold-changes:
+
+```{r}
+for (assembly in assemblies) {
+  key1 = paste(methods[1],assembly,sep=".")
+  key2 = paste(methods[2],assembly,sep=".")
+  thing1 = dfs[[key1]]
+  thing2 = dfs[[key2]]
+  v = intersect(row.names(thing1),row.names(thing2))
+  plot(thing1[v,"logFC"],
+       thing2[v,"logFC"],
+       xlab=paste("log2 fold-change",methods[1]),
+       ylab=paste("log2 fold-change",methods[2]),
+       main=paste(assembly,assembly_synonyms[assembly],sep=" - "),
+       pch="x")
+}
+```
+
+The above plot shows very tight correspondence between log2 fold-changes between the two methods.
+
+Having a combined data frame / spreadsheet of the DE results obtained from both methods might help analysts examine individual genes. Let's create a data frame for each assembly that combines the results and includes all the DE genes from each method from the same genome assembly.
+
+```{r}
+for (assembly in assemblies) {
+  key1 = paste(methods[1],assembly,sep=".")
+  key2 = paste(methods[2],assembly,sep=".")
+  thing1 = dfs[[key1]]
+  thing1 = thing1[thing1$padj<=Q,]
+  thing2 = dfs[[key2]]
+  thing2 = thing2[thing2$padj<=Q,]
+  thing3 = merge(thing1,thing2,
+                by="row.names",
+                all.x=T,
+                all.y=T,
+                suffixes=c(paste0(".",methods[1]),
+                           paste0(".",methods[2])))
+  if (assembly=="SL4") {
+    to_write = thing3[,c(2,3,4,5,6,7,14,15,16,19)]
+    names(to_write)[c(1:3,10)]=c("gene","group1","group2","description")
+    all.sl4 = to_write
+  }
+  if (assembly=="SL5") {
+    to_write = thing3[,c(2,3,4,5,6,7,15,16,17,20,21)]
+    names(to_write)[c(1:3,10,11)]=c("gene","group1","group2","description","SL4")
+    all.sl5 = to_write
+  }
+  output_fname=paste0(output_fname_prefix,assembly,output_fname_suffix)
+  write.table(to_write,file=output_fname,sep="\t",quote=F,
+            row.names = F)
+}
+```
+
+The preceding code chunk identified all comparisons that produced adjusted
+p value less than or equal to `r Q`, found by one or both methods, for the
+two genome assemblies. Data for the two genome assemblies were considered
+separately.
+
+SL4 assembly results:
+  
+* edgeR produced `r sum(all.sl4$padj.edgeR<=Q,na.rm=T)` comparisons with Q <= `r Q`. 
+* DeSeq2 produced `r sum(all.sl4$padj.DESeq2<=Q,na.rm=T)` comparisons with Q <= `r Q`. 
+* There were `r sum(all.sl4$padj.DESeq2<=Q & all.sl4$padj.edgeR<=Q,na.rm=T)` comparisons with Q <= `r Q` found by each method.
+
+SL5 assembly results:
+  
+* edgeR produced `r sum(all.sl5$padj.edgeR<=Q,na.rm=T)` comparisons with Q <= `r Q`. 
+* DESeq2 produced `r sum(all.sl5$padj.DESeq2<=Q,na.rm=T)` comparisons with Q <= `r Q`. 
+* There were `r sum(all.sl5$padj.DESeq2<=Q & all.sl5$padj.edgeR<=Q,na.rm=T)` comparisons with Q <= `r Q` found by each method.
+
+* * *
+
+# Discussion
+
+Both methods identified different but overlapping sets of comparisons with adjusted pvalues indicating differential expression.
+
+The fold-changes calculated by the two methods were very close, whereas the nominal p values were more different but still very similar. 
+
+Two data files with comparisons made from both methods were written out, one 
+for each assembly. Each data file name contained prefix `r output_fname_prefix`
+and a different suffix indicating the genome assembly. 
+
+Columns included:
+
+* gene - the gene measured
+* group1 - the group tested, the control
+* group 2 - the treatment group testing, the treatment
+* padj, pvalue, logFC - adjusted p value, nominal pvalue, log2 fold-change for each method, as indicated in the column name (e.g., padj.edgeR or padj.DESeq2)
+* description - gene description from SL4, if available; NA if not
+* SL4 - only in the SL5 spreadsheet; the SL4 gene name if available
+
+* * *
+
+# Conclusions
+
+* edgeR and DESeq2 produced similar results
+* Both methods produced the same trend with longer treatment times producing more differences in expression between treatment and control
+
+* * *
+
+# Session Info
+
+```{r}
+sessionInfo()
+```
+
+
+

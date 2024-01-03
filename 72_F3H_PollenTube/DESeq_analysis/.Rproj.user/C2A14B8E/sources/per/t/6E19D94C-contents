@@ -1,0 +1,204 @@
+# Functions used by many .Rmd files
+# assumes relative path ../results for results files
+#                       ../Documentation for "about" files
+# made in .Rmd files
+
+library(stringr)
+library(readr)
+library(readxl)
+
+prettyNumber = function(x,signif_digits=NA,
+                        big.mark=",") {   
+  if (!is.na(signif_digits)) {
+    to_return = format(signif(x,signif_digits),
+                       big.mark=big.mark)
+  }
+  else {
+    to_return = format(x,big.mark=big.mark)
+  }
+  return(to_return)
+}
+
+getSampleExcelSpreadsheet = function(fname="/Users/robreid/bitbucket/flavonoid-rnaseq/72_F3H_PollenTube/Documentation/muday-144_sample_sheet.xlsx") {
+  sample_sheet = read_excel(fname)
+  return(sample_sheet)
+}
+
+# returns a vector where names are sample names and
+# values are colors
+getSampleColors = function(sample_sheet_fname=NULL,
+                           sample_sheet=NULL,
+                           hex=F) {
+  if (is.null(sample_sheet)) {
+    if (!is.null(sample_sheet_fname)) {
+      sample_sheet = getSampleExcelSpreadsheet(fname=sample_sheet_fname)
+    } 
+    else {
+      sample_sheet=getSampleExcelSpreadsheet()
+    }
+  }
+  sample_colors = sample_sheet$Color
+  sample_codes = sample_sheet$`Sample Code`
+  names(sample_colors)=sample_codes
+  if (hex) {
+    # https://gist.github.com/mbannert/e9fcfa86de3b06068c83
+    rgbs=col2rgb(sample_colors)
+    hexes=apply(rgbs,2,
+                function(v){rgb(v[1],v[2],v[3], maxColorValue = 255)})
+    return(hexes)
+  }
+  else {
+    return(sample_colors)
+  }
+}
+
+# get counts per gene per sample
+# return data frame of counts with gene names as row names
+# keep description column if keep_description is TRUE
+# default is don't keep it
+getCounts = function(counts_fname=NULL,
+                     keep_description=FALSE,
+                     assembly="SL5") {
+  if (is.null(counts_fname)) {
+     counts_fname=paste0("/Users/robreid/bitbucket/flavonoid-rnaseq/72_F3H_PollenTube/results/muday-144-",assembly,
+      "_counts-salmon.txt")
+  }  
+  data=read.delim(counts_fname,
+                  header=T,
+                  sep="\t",
+                  comment.char = "#",
+                  row.names = "gene_name",
+                  quote="")
+  if (!keep_description) {
+    data = data[,1:ncol(data)-1] 
+  }
+  return(data)
+}
+
+# get scaled counts per gene, for the given assembly
+getScaledCounts = function(assembly="SL4") {
+  scaled_counts_fname=paste0("/Users/robreid/bitbucket/flavonoid-rnaseq/72_F3H_PollenTube/results/muday-144-",assembly,
+                            "_counts-salmon_scaled.txt")
+  data=read.delim(scaled_counts_fname,header=T,
+                  sep="\t",quote="",
+                  row.names = "gene_name") 
+  return(data)
+}
+
+# get treatment versus control differential expression 
+# result for simple C versus S comparison
+# if standardize, change some column names as shown below
+getCvS = function(method="edgeR",assembly="SL5",standardize=F) {
+  if (!method %in% c("edgeR","DESeq2") | !assembly %in% c("SL5","SL4")) {
+    return(NULL)
+  }
+  else {
+    fname = paste("CvT",method,assembly,sep="-")
+    fname = paste(fname,"txt",sep=".")
+    fname = paste("results",fname,sep="/")
+    data=read.delim(fname,comment.char = "#",header=T,quote="",as.is=T)
+    if (standardize) {
+      if (method=="edgeR") {
+        index = which(names(data)=="PValue")
+        names(data)[index]="pvalue"
+        index = which(names(data)=="Q")
+        names(data)[index]="padj"
+      }
+      if (method=="DESeq2") {
+        index = which(names(data)=="log2FoldChange")
+        names(data)[index]="logFC"
+      }
+    }
+    return(data)
+  }
+}
+
+
+# need to test this
+# retrieve a named character vector where names are
+# gene names and values are IGB links
+getIgbLinks=function(assembly="SL5") {
+  v=c("SL5","S_lycopersicum_Jun_2022",
+      "SL4","S_lycopersicum_Sep_2019")
+  lookup_assembly=c(rep(v[2],2),rep(v[4],2))
+  names(lookup_assembly)=v
+  annots_fname=paste(lookup_assembly[assembly],
+                     "bed.gz",sep=".")
+  annots_path=paste("..","..","quickload",
+                     annots_fname,sep="/")
+  annots=read.delim(annots_path,header=F,as.is=T,
+                    quote="",sep="\t")
+  annots=annots[,c(1,2,3,4,6,13)]
+  names(annots)=c('seq','start','end','tx_id','strand',
+                  'gene_id')
+  o=order(annots$seq,annots$start)
+  annots=annots[o,]
+  minstarts=annots[!duplicated(annots$gene_id),
+                   c('gene_id','seq','start')]
+  o=order(annots$seq,annots$end,decreasing=T)
+  annots=annots[o,]
+  maxends=annots[!duplicated(annots$gene_id),
+                 c('gene_id','end','strand')]
+  generegions=merge(minstarts,maxends,by='gene_id')
+  links=paste0('http://localhost:7085/UnibrowControl?version=&seqid=',
+               generegions$seq,'&start=',generegions$start-200,'&end=',generegions$end+200)
+  names(links)=generegions$gene_id
+  return(links)
+}
+  
+# need to update this
+# make a barplot showing expression in each sample for the
+# given gene
+# dat requires:
+# columns for each sample in the experiment
+# description column
+makeBarPlot=function(gene,dat,ylab,main=NA,beside=F) {
+  description_index = which(names(dat)=="description")
+  if (length(description_index)==1) {
+    description_index = description_index[1]
+    if (is.na(main)) {
+      main = dat[gene,description_index]
+    }
+    dat = dat[,-(description_index)]
+  }
+  sample_colors = getSampleColors()[names(dat)]
+  rowdata=dat[gene,names(dat)]
+  rowdata=as.numeric(rowdata)
+  names(rowdata)=names(sample_colors)
+  if (is.na(main)) {
+    main = gene
+  }
+  barplot(rowdata,
+          beside=beside,
+          main=main,
+          col=sample_colors,
+          las=2,
+          ylab=ylab)
+}
+
+# copied from function stringr in limma
+split2matrix = function(x, split, ...) 
+{
+  x <- as.character(x)
+  n <- length(x)
+  s <- strsplit(x, split = split, ...)
+  nc <- unlist(lapply(s, length))
+  out <- matrix("", n, max(nc))
+  for (i in 1:n) {
+    if (nc[i]) 
+      out[i, 1:nc[i]] <- s[[i]]
+  }
+  out
+}
+
+getSL4GeneNames = function(sl5_description) {
+  names_matrix = split2matrix(sl5_description,"ITAG4.0:")
+  to_return = names_matrix[,2]
+  boolean_vec = to_return == ""
+  to_return[boolean_vec]=names_matrix[boolean_vec,1]
+  return(to_return)
+}
+
+
+
+

@@ -1,0 +1,27 @@
+{
+    "id": "2869DD10",
+    "path": "~/Dropbox (UNC Charlotte)/R/EB-seq_Muday_timecourse/FindTreatmentEffectAcrossGenotypes-DESeq2.Rmd",
+    "project_path": null,
+    "type": "r_markdown",
+    "hash": "1605096574",
+    "contents": "",
+    "dirty": false,
+    "created": 1698167700793.0,
+    "source_on_save": false,
+    "relative_order": 7,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "21,14",
+        "scrollLine": "5",
+        "last_setup_crc32": "fc8c12bb338d19"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1698772437,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1698772437585,
+    "read_only": false,
+    "read_only_alternatives": []
+}

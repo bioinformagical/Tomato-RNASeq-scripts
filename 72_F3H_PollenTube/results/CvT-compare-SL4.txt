@@ -1,0 +1,539 @@
+gene	group1	group2	padj.edgeR	pvalue.edgeR	logFC.edgeR	padj.DESeq2	pvalue.DESeq2	logFC.DESeq2	description
+Solyc01g081250.3	A.28.15	A.34.15	2.66e-09	4.25e-12	2.937	1.04e-05	7.81e-09	2.962	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g095320.4	A.28.15	A.34.15	1.56e-26	1e-29	2.526	5.06e-16	1.46e-19	2.536	Bag family molecular chaperone regulator 6-like protein (AHRD V3.3 *** A0A2K3PRI9_TRIPR)
+Solyc01g102960.3	A.28.15	A.34.15	1.04e-14	1.11e-17	2.897	3.99e-07	1.84e-10	2.92	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc01g104740.3	A.28.15	A.34.15	2.89e-11	4.01e-14	1.979	1.09e-05	8.76e-09	1.995	Multiprotein-bridging factor 1c (AHRD V3.3 *** A0A1U8F6N4_CAPAN)
+Solyc02g088610.4	A.28.15	A.34.15	5.91e-05	1.2e-07	1.823	0.0271	2.96e-05	1.837	LeHSP110/ClpB heat shock protein
+Solyc03g007890.3	A.28.15	A.34.15	1.91e-46	4.08e-50	3.517	2.98e-06	2.06e-09	3.541	class 2 small heat shock protein Le-HSP17.6
+Solyc03g115230.3	A.28.15	A.34.15	1.43e-31	6.11e-35	2.062	8.13e-26	1.4e-29	2.069	Solanum lycopersicum heat shock protein
+Solyc03g117630.1	A.28.15	A.34.15	0.00197	4.41e-06	1.61	NA	NA	NA	NA
+Solyc03g120090.1	A.28.15	A.34.15	0.00197	4.38e-06	1.032	NA	NA	NA	NA
+Solyc04g011440.4	A.28.15	A.34.15	4.69e-19	4.01e-22	3.076	1.85e-09	7.44e-13	3.102	ethylene-responsive heat shock protein cognate 70
+Solyc05g052410.3	A.28.15	A.34.15	0.0167	4.27e-05	0.901	NA	NA	NA	NA
+Solyc06g036290.3	A.28.15	A.34.15	1.14e-17	1.1e-20	2.586	0.00179	1.64e-06	2.607	heat shock protein 90
+Solyc06g072430.3	A.28.15	A.34.15	2.41e-58	2.57e-62	3.204	6.32e-40	3.64e-44	3.215	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g076020.3	A.28.15	A.34.15	5.82e-12	7.45e-15	1.316	0.00843	8.24e-06	1.324	heat shock protein 70 kD
+Solyc08g062437.1	A.28.15	A.34.15	4.69e-20	3.5e-23	3.034	8.79e-12	3.03e-15	3.051	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3CY92_CAPCH)
+Solyc08g078700.2	A.28.15	A.34.15	2.43e-31	1.29e-34	3.304	3.87e-16	8.91e-20	3.322	mitochondrial small heat shock protein
+Solyc09g075950.1	A.28.15	A.34.15	0.0144	3.54e-05	1.609	NA	NA	NA	NA
+Solyc09g092690.3	A.28.15	A.34.15	4.12e-06	7.91e-09	2.982	0.0183	1.9e-05	3.041	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G2W2H8_CAPBA)
+Solyc10g084170.1	A.28.15	A.34.15	2.13e-08	3.63e-11	2.694	0.000759	6.55e-07	2.722	Bag family molecular chaperone regulator mitochondrial-like (AHRD V3.3 *** A0A2K3P7D1_TRIPR)
+Solyc11g012490.2	A.28.15	A.34.15	0.00915	2.15e-05	2.354	NA	NA	NA	NA
+Solyc11g066060.3	A.28.15	A.34.15	2.17e-08	3.93e-11	0.799	8.09e-07	4.19e-10	0.804	70 kDa heat shock protein (AHRD V3.3 *** Q943K7_ORYSJ)
+Solyc11g066100.2	A.28.15	A.34.15	3.12e-43	1e-46	2.218	2.41e-38	2.78e-42	2.223	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc11g071830.2	A.28.15	A.34.15	3.1e-13	3.64e-16	2.555	8.81e-07	5.07e-10	2.577	DnaJ protein like (AHRD V3.3 *** A0A2I0X6P9_9ASPA)
+Solyc12g015880.2	A.28.15	A.34.15	1.37e-09	2.05e-12	1.062	2.85e-06	1.8e-09	1.068	Heat shock protein 90-1
+Solyc01g081250.3	A.28.30	A.34.30	1.63e-27	2.25e-30	4.244	6.65e-10	1.05e-12	4.268	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g095320.4	A.28.30	A.34.30	7.62e-27	1.14e-29	3.821	5.58e-09	1.01e-11	3.819	Bag family molecular chaperone regulator 6-like protein (AHRD V3.3 *** A0A2K3PRI9_TRIPR)
+Solyc01g095430.3	A.28.30	A.34.30	0.00821	4.35e-05	-1.422	NA	NA	NA	NA
+Solyc01g102960.3	A.28.30	A.34.30	1.61e-35	1.02e-38	4.057	1.53e-29	3.63e-33	4.069	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc01g104740.3	A.28.30	A.34.30	3.46e-37	1.1e-40	3.561	1.22e-29	1.93e-33	3.571	Multiprotein-bridging factor 1c (AHRD V3.3 *** A0A1U8F6N4_CAPAN)
+Solyc01g106210.3	A.28.30	A.34.30	0.0101	5.68e-05	0.757	NA	NA	NA	NA
+Solyc02g077670.3	A.28.30	A.34.30	4.24e-08	1.57e-10	4.012	0.000476	1.24e-06	4.111	DnaJ-like protein (AHRD V3.3 *** Q9SP09_TOBAC)
+Solyc02g079930.3	A.28.30	A.34.30	0.00435	2.21e-05	0.943	0.0256	8.9e-05	0.945	phosphosulfolactate synthase
+Solyc02g081550.3	A.28.30	A.34.30	2.86e-09	9.39e-12	4.299	0.00365	1.06e-05	4.466	LeftsH6FtsH protease
+Solyc02g088610.4	A.28.30	A.34.30	1.94e-24	3.71e-27	3.07	9.77e-19	5.4e-22	3.079	LeHSP110/ClpB heat shock protein
+Solyc02g090820.3	A.28.30	A.34.30	0.00363	1.77e-05	0.867	0.0362	0.000131	0.868	Heat stress transcription factor B-1 (AHRD V3.3 *** A0A2G3D8M4_CAPCH)
+Solyc02g094610.1	A.28.30	A.34.30	0.0447	0.000261	1.899	NA	NA	NA	NA
+Solyc03g006580.3	A.28.30	A.34.30	0.00603	3.13e-05	-1.644	NA	NA	NA	NA
+Solyc03g007890.3	A.28.30	A.34.30	6.08e-48	6.45e-52	4.386	5.61e-19	2.66e-22	4.387	class 2 small heat shock protein Le-HSP17.6
+Solyc03g082420.3	A.28.30	A.34.30	4.73e-33	4.01e-36	6.391	2.03e-10	2.56e-13	6.551	Small heat shock protein, chloroplastic (AHRD V3.3 *** HS21C_SOLLC)
+Solyc03g115230.3	A.28.30	A.34.30	2.9e-28	3.68e-31	3.025	2.36e-09	4.09e-12	3.027	Solanum lycopersicum heat shock protein
+Solyc03g117630.1	A.28.30	A.34.30	2.76e-22	5.85e-25	3.847	9e-08	1.78e-10	3.862	Heat shock 70 kDa protein (AHRD V3.3 *** A0A1U8FVW2_CAPAN)
+Solyc03g118060.3	A.28.30	A.34.30	8.31e-12	2.38e-14	7.294	0.000249	6.28e-07	6.629	NFU1 iron-sulfur cluster protein (AHRD V3.3 *** AT5G07330.1)
+Solyc03g120090.1	A.28.30	A.34.30	5.18e-12	1.43e-14	2.06	3.38e-10	4.8e-13	2.063	Pyridoxal 5'-phosphate synthase pdxS subunit (AHRD V3.3 *** U9T0K3_RHIID)
+Solyc03g123540.3	A.28.30	A.34.30	6.01e-16	1.4e-18	4.703	1.66e-08	3.14e-11	4.786	17.4 kDa class III heat shock protein (AHRD V3.3 *** A0A2G3D1F4_CAPCH)
+Solyc04g011440.4	A.28.30	A.34.30	1.55e-41	3.28e-45	3.945	2.44e-37	1.92e-41	3.952	ethylene-responsive heat shock protein cognate 70
+Solyc04g072160.3	A.28.30	A.34.30	8.88e-26	1.6e-28	3.856	4.43e-17	3.5e-20	3.88	ripening regulated protein DDTFR8
+Solyc05g007895.1	A.28.30	A.34.30	0.000251	1.06e-06	2.842	NA	NA	NA	NA
+Solyc05g052410.3	A.28.30	A.34.30	1.33e-08	4.66e-11	1.801	4.24e-07	8.7e-10	1.805	Dehydration-responsive element-binding protein 2A (AHRD V3.3 *** A0A1U8GX89_CAPAN)
+Solyc05g055470.4	A.28.30	A.34.30	0.00837	4.52e-05	0.683	NA	NA	NA	NA
+Solyc06g036290.3	A.28.30	A.34.30	2.18e-34	1.62e-37	3.866	5.95e-12	6.58e-15	3.873	heat shock protein 90
+Solyc06g072430.3	A.28.30	A.34.30	5.21e-30	5.52e-33	3.586	6e-10	9e-13	3.585	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g076020.3	A.28.30	A.34.30	5.4e-14	1.37e-16	1.723	0.000954	2.56e-06	1.723	heat shock protein 70 kD
+Solyc06g076520.1	A.28.30	A.34.30	9.15e-13	2.42e-15	5.019	1.26e-06	2.68e-09	5.135	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076560.2	A.28.30	A.34.30	7.62e-27	1.21e-29	5.217	5.95e-12	6.13e-15	5.301	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076570.4	A.28.30	A.34.30	6.91e-06	2.78e-08	3.208	0.0218	7.4e-05	3.284	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g083190.4	A.28.30	A.34.30	4.22e-08	1.52e-10	3.07	1.05e-05	2.58e-08	3.095	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G3CCB5_CAPCH)
+Solyc07g018210.3	A.28.30	A.34.30	0.0131	7.48e-05	-1.217	NA	NA	NA	NA
+Solyc07g040960.1	A.28.30	A.34.30	2.13e-06	8.37e-09	2.505	0.00324	9.21e-06	2.532	Harbinger transposase-derived nuclease (AHRD V3.3 *** A0A200QD47_9MAGN)
+Solyc07g053615.1	A.28.30	A.34.30	2.95e-07	1.13e-09	1.601	4e-06	9.46e-09	1.604	DnaJ like protein (AHRD V3.3 *** Q9FEW7_SOLLC)
+Solyc07g065840.2	A.28.30	A.34.30	0.0031	1.48e-05	0.426	0.00205	5.66e-06	0.426	molecular chaperone Hsp90-2
+Solyc08g006980.3	A.28.30	A.34.30	5.82e-11	1.79e-13	2.307	2.26e-09	3.75e-12	2.312	RING/U-box superfamily protein (AHRD V3.3 *** A0A2U1LIK0_ARTAN)
+Solyc08g060920.4	A.28.30	A.34.30	0.00294	1.37e-05	1.221	NA	NA	NA	NA
+Solyc08g062340.3	A.28.30	A.34.30	2.48e-10	7.87e-13	3.418	3.16e-06	7.22e-09	3.453	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3A1B9_CAPAN)
+Solyc08g062437.1	A.28.30	A.34.30	4.11e-29	4.79e-32	3.683	2.07e-26	6.53e-30	3.691	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3CY92_CAPCH)
+Solyc08g062960.4	A.28.30	A.34.30	4.55e-14	1.11e-16	4.868	2.35e-06	5.2e-09	4.992	Heat shock transcription factor (AHRD V3.3 *-* A0A1Y1I763_KLENI)
+Solyc08g067960.3	A.28.30	A.34.30	0.00853	4.7e-05	0.491	0.0419	0.000155	0.491	CHY-type/CTCHY-type/RING-type Zinc finger protein (AHRD V3.3 *** A0A2U1Q2D4_ARTAN)
+Solyc08g078700.2	A.28.30	A.34.30	9.4e-37	3.98e-40	4.617	4.53e-14	3.93e-17	4.638	mitochondrial small heat shock protein
+Solyc08g079170.3	A.28.30	A.34.30	0.00377	1.88e-05	0.663	0.00802	2.53e-05	0.663	Hsp70-Hsp90 organizing protein 1 (AHRD V3.3 *** A0A1U8GC69_CAPAN)
+Solyc08g081455.1	A.28.30	A.34.30	0.00031	1.35e-06	2.753	NA	NA	NA	NA
+Solyc09g005120.3	A.28.30	A.34.30	3.5e-05	1.44e-07	1.143	NA	NA	NA	NA
+NA	NA	NA	NA	NA	NA	0.0489	0.000189	2.894	plant/protein (AHRD V3.3 *** AT3G10020.1)
+NA	NA	NA	NA	NA	NA	0.0155	5.01e-05	5.96	Gag-asp_proteas domain-containing protein (AHRD V3.3 *-* A0A1Q3CQ35_CEPFO)
+NA	NA	NA	NA	NA	NA	0.0217	7.18e-05	5.807	Class I heat shock protein (AHRD V3.3 *** A0A2K3KSJ8_TRIPR)
+NA	NA	NA	NA	NA	NA	0.0445	0.000169	5.583	Heat shock transcription factor (AHRD V3.3 *-* A0A1Y1I763_KLENI)
+Solyc09g075950.1	A.28.30	A.34.30	0.000448	1.99e-06	1.868	0.00418	1.26e-05	1.876	Heat shock protein 70 kDa (AHRD V3.3 *** A0A2K3P5L8_TRIPR)
+Solyc09g082690.3	A.28.30	A.34.30	0.00116	5.27e-06	2.909	NA	NA	NA	NA
+Solyc09g092690.3	A.28.30	A.34.30	2.27e-23	4.58e-26	4.261	1.75e-19	6.9e-23	4.281	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G2W2H8_CAPBA)
+Solyc10g078930.2	A.28.30	A.34.30	3.08e-11	9.14e-14	1.325	6.84e-11	8.09e-14	1.325	Activator of 90 kDa heat shock protein ATPase-like protein 1 (AHRD V3.3 *** A0A1J3GDI7_NOCCA)
+Solyc10g084170.1	A.28.30	A.34.30	1.81e-26	3.08e-29	4.131	2.11e-17	1.5e-20	4.159	Bag family molecular chaperone regulator mitochondrial-like (AHRD V3.3 *** A0A2K3P7D1_TRIPR)
+NA	NA	NA	NA	NA	NA	0.00418	1.29e-05	6.18	leer-sHSP small heat shock protein
+Solyc11g066060.3	A.28.30	A.34.30	1e-08	3.4e-11	1.26	0.0341	0.000121	1.26	70 kDa heat shock protein (AHRD V3.3 *** Q943K7_ORYSJ)
+Solyc11g066100.2	A.28.30	A.34.30	2.28e-31	2.17e-34	3.033	3.38e-10	4.75e-13	3.032	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc11g071830.2	A.28.30	A.34.30	4.31e-36	2.28e-39	4.156	5.85e-13	5.54e-16	4.156	DnaJ protein like (AHRD V3.3 *** A0A2I0X6P9_9ASPA)
+Solyc12g015880.2	A.28.30	A.34.30	1.54e-18	3.42e-21	1.785	3.24e-18	2.04e-21	1.786	Heat shock protein 90-1
+Solyc01g007840.3	A.28.45	A.34.45	0.0388	0.000331	0.684	0.0475	0.000314	0.681	Polynucleotidyl transferase, ribonuclease H-like superfamily protein (AHRD V3.3 *** A0A2U1M9A7_ARTAN)
+Solyc01g010220.3	A.28.45	A.34.45	0.00848	6.5e-05	2.505	0.0235	0.000138	2.524	Copia-like polyprotein/retrotransposon (AHRD V3.3 --* Q9FI33_ARATH)
+Solyc01g081250.3	A.28.45	A.34.45	1.7e-12	3.26e-15	4.133	3.22e-06	6.83e-09	4.131	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g081270.2	A.28.45	A.34.45	7.37e-08	2.75e-10	4.732	0.000618	2.3e-06	4.899	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g091270.3	A.28.45	A.34.45	0.00623	4.71e-05	1.286	0.0159	8.61e-05	1.286	myeloid leukemia factor (AHRD V3.3 *** AT2G45380.4)
+Solyc01g095320.4	A.28.45	A.34.45	4.28e-17	2.28e-20	4.487	2.38e-09	2.22e-12	4.486	Bag family molecular chaperone regulator 6-like protein (AHRD V3.3 *** A0A2K3PRI9_TRIPR)
+Solyc01g098430.3	A.28.45	A.34.45	0.0101	7.89e-05	1.379	NA	NA	NA	NA
+Solyc01g102960.3	A.28.45	A.34.45	3.1e-15	2.97e-18	4.514	2.82e-08	3.82e-11	4.516	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc01g104740.3	A.28.45	A.34.45	3.83e-06	1.63e-08	2.678	0.0159	8.5e-05	2.673	Multiprotein-bridging factor 1c (AHRD V3.3 *** A0A1U8F6N4_CAPAN)
+Solyc01g106210.3	A.28.45	A.34.45	0.000549	3.51e-06	1.501	0.000137	3.93e-07	1.5	Heat shock protein 70 kDa (AHRD V3.3 *** A0A2K3MZA1_TRIPR)
+Solyc01g107080.3	A.28.45	A.34.45	2.56e-11	6.54e-14	5.418	0.000663	2.53e-06	5.474	HXXXD-type acyl-transferase family protein (AHRD V3.3 *** A0A2K3MRI0_TRIPR)
+NA	NA	NA	NA	NA	NA	0.0101	4.77e-05	5.788	Calcium-dependent lipid-binding (CaLB domain) family protein (AHRD V3.3 *** A0A2U1LMA8_ARTAN)
+NA	NA	NA	NA	NA	NA	0.000443	1.54e-06	4.669	Transcription initiation factor TFIID subunit 8 (AHRD V3.3 *** A0A1J3F703_NOCCA)
+Solyc02g077670.3	A.28.45	A.34.45	1.02e-11	2.5e-14	4.248	9.92e-13	8.4e-17	4.27	DnaJ-like protein (AHRD V3.3 *** Q9SP09_TOBAC)
+Solyc02g079930.3	A.28.45	A.34.45	2.08e-05	9.97e-08	1.662	1.25e-06	2.55e-09	1.662	phosphosulfolactate synthase
+Solyc02g081550.3	A.28.45	A.34.45	8.74e-15	1.12e-17	5.61	1.87e-12	4.74e-16	5.684	LeftsH6FtsH protease
+Solyc02g088610.4	A.28.45	A.34.45	0.000383	2.28e-06	2.907	NA	NA	NA	NA
+Solyc02g090820.3	A.28.45	A.34.45	5.2e-05	2.66e-07	1.709	8.03e-06	2.04e-08	1.709	Heat stress transcription factor B-1 (AHRD V3.3 *** A0A2G3D8M4_CAPCH)
+Solyc03g007000.4	A.28.45	A.34.45	0.000533	3.35e-06	1.707	NA	NA	NA	NA
+Solyc03g007890.3	A.28.45	A.34.45	1.59e-14	2.37e-17	4.359	1.42e-07	2.4e-10	4.356	class 2 small heat shock protein Le-HSP17.6
+Solyc03g025720.3	A.28.45	A.34.45	0.0221	0.000179	1.981	NA	NA	NA	NA
+Solyc03g082420.3	A.28.45	A.34.45	8.63e-25	9.19e-29	6.595	1.66e-10	8.42e-14	6.638	Small heat shock protein, chloroplastic (AHRD V3.3 *** HS21C_SOLLC)
+Solyc03g113930.3	A.28.45	A.34.45	1.59e-14	2.25e-17	6.904	6.14e-06	1.46e-08	7.256	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc03g115230.3	A.28.45	A.34.45	7.67e-09	2.45e-11	3.121	0.000618	2.28e-06	3.117	Solanum lycopersicum heat shock protein
+Solyc03g117630.1	A.28.45	A.34.45	2.01e-17	8.56e-21	5.184	7.17e-10	5.47e-13	5.189	Heat shock 70 kDa protein (AHRD V3.3 *** A0A1U8FVW2_CAPAN)
+Solyc03g118060.3	A.28.45	A.34.45	1.02e-11	2.35e-14	5.337	1.98e-08	2.35e-11	5.441	NFU1 iron-sulfur cluster protein (AHRD V3.3 *** AT5G07330.1)
+Solyc03g120090.1	A.28.45	A.34.45	0.000142	8.01e-07	2.268	NA	NA	NA	NA
+Solyc03g123540.3	A.28.45	A.34.45	2.85e-14	4.86e-17	5.808	4.02e-07	7.49e-10	5.869	17.4 kDa class III heat shock protein (AHRD V3.3 *** A0A2G3D1F4_CAPCH)
+Solyc03g123560.3	A.28.45	A.34.45	0.0438	0.000392	2.299	NA	NA	NA	NA
+Solyc04g005270.1	A.28.45	A.34.45	0.00575	4.29e-05	1.042	0.0132	6.77e-05	1.038	Phosphatidylinositol 4-kinase gamma 7 (AHRD V3.3 *** A0A1U8GNT8_CAPAN)
+Solyc04g011440.4	A.28.45	A.34.45	9.38e-10	2.7e-12	4.074	0.000109	3.04e-07	4.071	ethylene-responsive heat shock protein cognate 70
+Solyc04g014480.3	A.28.45	A.34.45	0.00571	4.2e-05	1.844	NA	NA	NA	NA
+Solyc04g072160.3	A.28.45	A.34.45	4.99e-19	1.06e-22	4.642	6.22e-10	4.22e-13	4.642	ripening regulated protein DDTFR8
+Solyc05g005910.4	A.28.45	A.34.45	0.0425	0.000376	2.018	NA	NA	NA	NA
+Solyc05g007895.1	A.28.45	A.34.45	8.36e-08	3.21e-10	3.741	5.52e-06	1.22e-08	3.784	RING/U-box superfamily protein (AHRD V3.3 *-* Q9LJE9_ARATH)
+NA	NA	NA	NA	NA	NA	0.0118	5.82e-05	5.598	DnaJ-like protein subfamily B member 6 (AHRD V3.3 *-* A0A2G3B5R9_CAPCH)
+Solyc05g013440.3	A.28.45	A.34.45	0.0244	0.000202	1.962	NA	NA	NA	NA
+Solyc05g014280.4	A.28.45	A.34.45	1.49e-08	5.08e-11	6.961	0.0022	9.67e-06	7.311	small heat shock protein 1
+Solyc05g046310.3	A.28.45	A.34.45	0.00031	1.79e-06	2.326	NA	NA	NA	NA
+Solyc05g052410.3	A.28.45	A.34.45	9.4e-05	4.91e-07	1.862	2.34e-05	6.36e-08	1.861	Dehydration-responsive element-binding protein 2A (AHRD V3.3 *** A0A1U8GX89_CAPAN)
+NA	NA	NA	NA	NA	NA	0.0327	0.000205	3.767	Regulator of chromosome condensation (RCC1) family protein (AHRD V3.3 *** Q9M2S1_ARATH)
+NA	NA	NA	NA	NA	NA	0.0326	0.000202	5.671	cilia- and flagella-associated protein 298-B-like isoform X1 (AHRD V3.3 *** XP_010321365.1)
+Solyc05g055010.4	A.28.45	A.34.45	0.00126	8.48e-06	2.965	NA	NA	NA	NA
+Solyc05g055470.4	A.28.45	A.34.45	0.0244	0.000202	1.011	0.0132	6.84e-05	1.009	NAC domain-containing protein 13 (AHRD V3.3 *** A0A2G2XV32_CAPAN)
+Solyc06g011370.4	A.28.45	A.34.45	1.2e-07	4.84e-10	4.985	0.000247	7.76e-07	5.156	Chaperone protein ClpB (AHRD V3.3 *-* B2IUM0_NOSP7)
+Solyc06g036290.3	A.28.45	A.34.45	7.32e-08	2.65e-10	2.787	0.00213	9.22e-06	2.783	heat shock protein 90
+NA	NA	NA	NA	NA	NA	0.000247	7.7e-07	6.868	Protein kinase-like protein (AHRD V3.3 *** Q8LCP0_ARATH)
+Solyc06g072430.3	A.28.45	A.34.45	8.98e-06	4.21e-08	3.175	0.0166	9.16e-05	3.169	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g076520.1	A.28.45	A.34.45	7.1e-12	1.51e-14	5.041	7.96e-06	1.96e-08	5.062	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076560.2	A.28.45	A.34.45	3.26e-15	3.48e-18	5.764	1.35e-07	2.15e-10	5.795	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076570.4	A.28.45	A.34.45	6.94e-09	2.14e-11	4.466	2.33e-08	2.97e-11	4.516	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076670.3	A.28.45	A.34.45	0.00104	6.75e-06	1.115	0.000401	1.36e-06	1.113	RNA-binding (RRM/RBD/RNP motifs) family protein (AHRD V3.3 *-* A0A1P8AVT0_ARATH)
+Solyc06g083190.4	A.28.45	A.34.45	4.67e-17	2.98e-20	4.514	1.23e-09	1.05e-12	4.531	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G3CCB5_CAPCH)
+Solyc07g007500.3	A.28.45	A.34.45	0.0127	1e-04	2.289	0.0276	0.000168	2.309	nucleolin isoform X1 (AHRD V3.3 *-* XP_004242730.1)
+Solyc07g042250.3	A.28.45	A.34.45	0.00431	3.03e-05	1.405	NA	NA	NA	NA
+Solyc07g042930.3	A.28.45	A.34.45	0.00105	6.93e-06	1.108	0.0124	6.21e-05	1.107	Rhomboid-like protein 14 (AHRD V3.3 *** A0A2K3N0Y0_TRIPR)
+Solyc07g048120.3	A.28.45	A.34.45	0.00483	3.5e-05	1.158	0.00233	1.05e-05	1.155	ubiquitin fusion degradation protein 1 (AHRD V3.3 *** A0A2I4DSF8_9ROSI)
+Solyc07g053615.1	A.28.45	A.34.45	0.00336	2.32e-05	1.718	NA	NA	NA	NA
+NA	NA	NA	NA	NA	NA	0.00188	7.95e-06	6.457	Lectin-domain receptor-like kinase (AHRD V3.3 *-* G4XXY5_NICAT)
+Solyc07g056510.3	A.28.45	A.34.45	1.97e-10	5.45e-13	5.832	8.49e-07	1.66e-09	6.002	Glutathione S-transferase-like protein (AHRD V3.3 *** A0A2K3N2T5_TRIPR)
+Solyc08g006980.3	A.28.45	A.34.45	8.83e-09	2.92e-11	2.489	1.32e-10	5.58e-14	2.49	RING/U-box superfamily protein (AHRD V3.3 *** A0A2U1LIK0_ARTAN)
+Solyc08g062340.3	A.28.45	A.34.45	8.06e-15	9.45e-18	5.225	5.31e-08	7.65e-11	5.252	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3A1B9_CAPAN)
+Solyc08g062437.1	A.28.45	A.34.45	5.37e-17	4.01e-20	4.137	2.83e-09	2.88e-12	4.137	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3CY92_CAPCH)
+Solyc08g062960.4	A.28.45	A.34.45	3.27e-14	5.93e-17	5.483	1.58e-12	2.68e-16	5.548	Heat shock transcription factor (AHRD V3.3 *-* A0A1Y1I763_KLENI)
+Solyc08g068820.3	A.28.45	A.34.45	0.04	0.000345	0.806	NA	NA	NA	NA
+Solyc08g078700.2	A.28.45	A.34.45	6.07e-17	5.18e-20	4.086	5.15e-09	5.67e-12	4.085	mitochondrial small heat shock protein
+Solyc08g079170.3	A.28.45	A.34.45	6.39e-06	2.86e-08	1.692	0.0135	7.11e-05	1.689	Hsp70-Hsp90 organizing protein 1 (AHRD V3.3 *** A0A1U8GC69_CAPAN)
+Solyc09g005120.3	A.28.45	A.34.45	0.0047	3.36e-05	1.517	NA	NA	NA	NA
+NA	NA	NA	NA	NA	NA	0.0017	7.07e-06	6.255	heavy metal-associated isoprenylated plant protein 3-like (AHRD V3.3 *-* A0A1S4B4L4_TOBAC)
+Solyc09g008970.1	A.28.45	A.34.45	1.02e-11	2.38e-14	4.918	7.64e-11	2.59e-14	4.971	plant/protein (AHRD V3.3 *** AT3G10020.1)
+Solyc09g011030.3	A.28.45	A.34.45	0.0139	0.000111	2.859	0.0202	0.000115	2.883	Hsp70 nucleotide exchange factor FES1 (AHRD V3.3 *** A0A1J3K956_NOCCA)
+Solyc09g011160.4	A.28.45	A.34.45	2.82e-05	1.38e-07	3.677	0.00057	2.03e-06	3.733	Regulator of chromosome condensation (RCC1) family protein (AHRD V3.3 *** A0A1I9LSN5_ARATH)
+Solyc09g015000.4	A.28.45	A.34.45	8.62e-06	3.95e-08	4.609	5.84e-06	1.34e-08	4.681	Class I heat shock protein (AHRD V3.3 *** A0A2K3KSJ8_TRIPR)
+Solyc09g015010.2	A.28.45	A.34.45	7.1e-12	1.5e-14	5.429	1.35e-07	2.18e-10	5.551	Gag-asp_proteas domain-containing protein (AHRD V3.3 *-* A0A1Q3CQ35_CEPFO)
+NA	NA	NA	NA	NA	NA	0.000806	3.14e-06	6.667	Class I heat shock protein (AHRD V3.3 *** A0A2K3KSJ8_TRIPR)
+NA	NA	NA	NA	NA	NA	0.0411	0.000268	4.628	Heat shock transcription factor (AHRD V3.3 *-* A0A1Y1I763_KLENI)
+Solyc09g074510.3	A.28.45	A.34.45	0.00173	1.18e-05	1.399	0.00335	1.53e-05	1.4	Tubby-like F-box protein (AHRD V3.3 *** A0A200QX79_9MAGN)
+Solyc09g075950.1	A.28.45	A.34.45	3.42e-11	9.11e-14	3.514	1.05e-05	2.75e-08	3.524	Heat shock protein 70 kDa (AHRD V3.3 *** A0A2K3P5L8_TRIPR)
+NA	NA	NA	NA	NA	NA	0.0488	0.000326	4.186	Major facilitator superfamily protein (AHRD V3.3 *** A0A2U1PVI2_ARTAN)
+Solyc09g092690.3	A.28.45	A.34.45	6.64e-18	2.12e-21	5.528	2.44e-10	1.45e-13	5.536	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G2W2H8_CAPBA)
+Solyc10g078930.2	A.28.45	A.34.45	5.2e-05	2.61e-07	1.514	0.0355	0.000226	1.511	Activator of 90 kDa heat shock protein ATPase-like protein 1 (AHRD V3.3 *** A0A1J3GDI7_NOCCA)
+Solyc10g084170.1	A.28.45	A.34.45	3.88e-08	1.36e-10	3.67	0.00109	4.35e-06	3.667	Bag family molecular chaperone regulator mitochondrial-like (AHRD V3.3 *** A0A2K3P7D1_TRIPR)
+Solyc10g085040.1	A.28.45	A.34.45	0.00031	1.82e-06	2.678	0.0239	0.000142	2.711	Heme-binding-like protein (AHRD V3.3 *** A0A2I0X8X3_9ASPA)
+Solyc10g086410.3	A.28.45	A.34.45	0.0439	0.000398	0.896	0.0395	0.000255	0.894	LEHSC270  hsc-2heat shock protein cognate 70
+Solyc11g020040.2	A.28.45	A.34.45	3.23e-06	1.34e-08	2.833	0.00836	3.9e-05	2.88	heat shock protein 70
+Solyc11g020330.1	A.28.45	A.34.45	5.21e-09	1.55e-11	4.931	0.000363	1.2e-06	4.989	leer-sHSP small heat shock protein
+Solyc11g066100.2	A.28.45	A.34.45	1.11e-07	4.36e-10	2.687	0.00142	5.78e-06	2.683	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc11g066830.2	A.28.45	A.34.45	9.97e-05	5.42e-07	1.831	0.000193	5.71e-07	1.83	Zinc finger transcription factor 68
+Solyc11g068730.2	A.28.45	A.34.45	0.000523	3.23e-06	2.089	NA	NA	NA	NA
+Solyc11g068940.1	A.28.45	A.34.45	0.000105	5.79e-07	2.723	0.0217	0.000125	2.759	RING-type E3 ubiquitin transferase (AHRD V3.3 *** A0A2G2VPS7_CAPBA)
+Solyc11g071830.2	A.28.45	A.34.45	1.68e-14	2.68e-17	4.181	2.29e-07	4.07e-10	4.177	DnaJ protein like (AHRD V3.3 *** A0A2I0X6P9_9ASPA)
+NA	NA	NA	NA	NA	NA	0.0276	0.000169	0.888	WLM domain-containing protein/PUB domain-containing protein (AHRD V3.3 *** A0A1Q3B398_CEPFO)
+Solyc12g010450.3	A.28.45	A.34.45	4.2e-06	1.83e-08	2.382	0.000317	1.02e-06	2.394	Protein phosphatase 2C (AHRD V3.3 *** B4FDN2_MAIZE)
+Solyc12g015880.2	A.28.45	A.34.45	0.000469	2.85e-06	1.892	NA	NA	NA	NA
+NA	NA	NA	NA	NA	NA	0.0493	0.000334	0.787	Heat shock protein 70 family (AHRD V3.3 *** A0A200PNX6_9MAGN)
+Solyc12g056780.2	A.28.45	A.34.45	0.0415	0.000363	1.569	NA	NA	NA	NA
+Solyc12g099980.3	A.28.45	A.34.45	9.97e-05	5.36e-07	2.767	0.0102	4.92e-05	2.802	receptor-like protein 12 (AHRD V3.3 *** A0A1U8F785_CAPAN)
+Solyc12g099990.2	A.28.45	A.34.45	0.0268	0.000226	0.891	0.0193	0.000108	0.889	Calmodulin 5
+NA	NA	NA	NA	NA	NA	0.011	1e-04	5.84	Ribosomal protein S3 (AHRD V3.3 *** A0A290WKX3_SOLLC)
+Solyc01g007840.3	A.28.75	A.34.75	0.00579	6.68e-05	0.916	0.00228	1.63e-05	0.915	Polynucleotidyl transferase, ribonuclease H-like superfamily protein (AHRD V3.3 *** A0A2U1M9A7_ARTAN)
+Solyc01g010220.3	A.28.75	A.34.75	0.0152	0.000198	2.438	0.00853	7.42e-05	2.45	Copia-like polyprotein/retrotransposon (AHRD V3.3 --* Q9FI33_ARATH)
+NA	NA	NA	NA	NA	NA	0.0287	0.000288	1.099	DnaJ protein ERDJ3B (AHRD V3.3 *** A0A2G2Z6I0_CAPAN)
+Solyc01g081000.3	A.28.75	A.34.75	0.021	0.000286	1.621	NA	NA	NA	NA
+Solyc01g081250.3	A.28.75	A.34.75	4.28e-14	9.51e-17	4.209	4.51e-08	8.76e-11	4.207	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g081270.2	A.28.75	A.34.75	2.06e-06	1.42e-08	3.87	4.85e-05	2.47e-07	3.933	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+NA	NA	NA	NA	NA	NA	0.0131	0.000121	2.833	Nitroreductase family protein (AHRD V3.3 *** A0A2K3NXL4_TRIPR)
+Solyc01g091270.3	A.28.75	A.34.75	1.11e-06	7.05e-09	2.695	0.00165	1.17e-05	2.696	myeloid leukemia factor (AHRD V3.3 *** AT2G45380.4)
+Solyc01g095320.4	A.28.75	A.34.75	5.01e-18	4.78e-21	5.458	1.49e-11	1.62e-14	5.456	Bag family molecular chaperone regulator 6-like protein (AHRD V3.3 *** A0A2K3PRI9_TRIPR)
+NA	NA	NA	NA	NA	NA	0.000568	3.48e-06	4.323	Auxin-responsive GH3 family protein (AHRD V3.3 *** A0A2U1NZC8_ARTAN)
+Solyc01g102960.3	A.28.75	A.34.75	1.16e-12	3.44e-15	5.287	1.03e-07	2.49e-10	5.285	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc01g104740.3	A.28.75	A.34.75	5.58e-06	4.01e-08	3.233	0.00626	5.28e-05	3.229	Multiprotein-bridging factor 1c (AHRD V3.3 *** A0A1U8F6N4_CAPAN)
+Solyc01g106210.3	A.28.75	A.34.75	9.79e-05	8.91e-07	1.906	0.0311	0.000317	1.904	Heat shock protein 70 kDa (AHRD V3.3 *** A0A2K3MZA1_TRIPR)
+Solyc01g107080.3	A.28.75	A.34.75	5.72e-15	9.69e-18	6.816	1.88e-08	3.07e-11	6.85	HXXXD-type acyl-transferase family protein (AHRD V3.3 *** A0A2K3MRI0_TRIPR)
+Solyc02g061790.4	A.28.75	A.34.75	0.000331	3.26e-06	1.926	0.01	8.93e-05	1.935	Activated RNA polymerase II transcriptional coactivator p15 (AHRD V3.3 *** A0A2G2XC29_CAPBA)
+Solyc02g063355.1	A.28.75	A.34.75	3.89e-09	1.97e-11	7.233	0.000768	4.77e-06	7.596	Calcium-dependent lipid-binding (CaLB domain) family protein (AHRD V3.3 *** A0A2U1LMA8_ARTAN)
+NA	NA	NA	NA	NA	NA	0.000131	7.33e-07	6.992	Exonuclease family protein (AHRD V3.3 *** A0A2U1PL29_ARTAN)
+Solyc02g069170.3	A.28.75	A.34.75	8.48e-11	3.5e-13	5.997	1.66e-07	4.13e-10	6.165	Transcription initiation factor TFIID subunit 8 (AHRD V3.3 *** A0A1J3F703_NOCCA)
+Solyc02g077670.3	A.28.75	A.34.75	2.53e-15	3.75e-18	5.386	2.71e-09	3.58e-12	5.405	DnaJ-like protein (AHRD V3.3 *** Q9SP09_TOBAC)
+Solyc02g079440.3	A.28.75	A.34.75	0.0119	0.000151	-1.671	NA	NA	NA	NA
+Solyc02g079930.3	A.28.75	A.34.75	5.42e-07	3.27e-09	2.081	0.00124	8.17e-06	2.081	phosphosulfolactate synthase
+Solyc02g081550.3	A.28.75	A.34.75	1.09e-27	1.16e-31	6.817	1.4e-11	1.42e-14	6.907	LeftsH6FtsH protease
+Solyc02g086750.3	A.28.75	A.34.75	0.0107	0.000132	1.253	0.0358	0.000375	1.254	Tudor/PWWP/MBT superfamily protein (AHRD V3.3 *-* A0A1P8BF80_ARATH)
+Solyc02g088610.4	A.28.75	A.34.75	2.48e-09	1.21e-11	3.634	5.59e-05	2.91e-07	3.633	LeHSP110/ClpB heat shock protein
+NA	NA	NA	NA	NA	NA	0.00441	3.53e-05	6.242	Pentatricopeptide repeat-containing protein (AHRD V3.3 *** A0A2G3D998_CAPCH)
+Solyc02g090820.3	A.28.75	A.34.75	2.4e-11	9.14e-14	2.688	7.85e-16	1.83e-19	2.689	Heat stress transcription factor B-1 (AHRD V3.3 *** A0A2G3D8M4_CAPCH)
+Solyc03g006990.1	A.28.75	A.34.75	9.71e-05	8.73e-07	3.117	0.00124	8.19e-06	3.151	Pentatricopeptide repeat (AHRD V3.3 *** A0A200PMS4_9MAGN)
+Solyc03g007000.4	A.28.75	A.34.75	6.87e-05	5.89e-07	1.807	0.00419	3.29e-05	1.812	Peptidase M48 (AHRD V3.3 *** A0A200PMQ6_9MAGN)
+Solyc03g007890.3	A.28.75	A.34.75	1.03e-11	3.69e-14	4.741	7.85e-07	2.5e-09	4.738	class 2 small heat shock protein Le-HSP17.6
+Solyc03g025530.3	A.28.75	A.34.75	0.00327	3.63e-05	1.808	0.00368	2.83e-05	1.812	oxidoreductase/transition metal ion-binding protein (AHRD V3.3 *** AT5G52410.3)
+Solyc03g044960.2	A.28.75	A.34.75	0.0342	0.000479	-0.85	NA	NA	NA	NA
+NA	NA	NA	NA	NA	NA	0.0352	0.000364	5.772	Avr9/Cf-9 rapidly elicited protein 65 (AHRD V3.3 *** Q9FQZ0_TOBAC)
+Solyc03g082420.3	A.28.75	A.34.75	6.3e-21	3.33e-24	6.082	2.25e-13	1.4e-16	6.092	Small heat shock protein, chloroplastic (AHRD V3.3 *** HS21C_SOLLC)
+Solyc03g082920.4	A.28.75	A.34.75	4.74e-05	3.92e-07	1.605	3.6e-06	1.31e-08	1.605	Heat shock protein 70 family (AHRD V3.3 *** A0A200QNK9_9MAGN)
+NA	NA	NA	NA	NA	NA	0.00902	7.92e-05	3.881	phosphatidylinositol 4-kinase gamma 4-like (AHRD V3.3 *** A0A2I4FK44_9ROSI)
+Solyc03g112140.4	A.28.75	A.34.75	9.45e-05	8.4e-07	3.265	9.52e-06	3.99e-08	3.288	MAP kinase kinase kinase 27
+Solyc03g113930.3	A.28.75	A.34.75	6.46e-14	1.5e-16	6.845	1.59e-06	5.42e-09	6.964	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc03g115230.3	A.28.75	A.34.75	8.74e-13	2.5e-15	3.88	5.43e-07	1.56e-09	3.877	Solanum lycopersicum heat shock protein
+Solyc03g116630.3	A.28.75	A.34.75	0.0342	0.000482	0.874	NA	NA	NA	NA
+Solyc03g117630.1	A.28.75	A.34.75	5.96e-22	1.89e-25	5.815	1.28e-14	3.97e-18	5.818	Heat shock 70 kDa protein (AHRD V3.3 *** A0A1U8FVW2_CAPAN)
+Solyc03g117960.4	A.28.75	A.34.75	8.04e-05	6.98e-07	1.549	6.31e-05	3.33e-07	1.549	Forkhead-associated domain-containing protein / FHA domain-containing protein (AHRD V3.3 *** A0A2U1Q1M6_ARTAN)
+Solyc03g118060.3	A.28.75	A.34.75	3.12e-14	6.27e-17	6.513	1.64e-13	8.9e-17	6.616	NFU1 iron-sulfur cluster protein (AHRD V3.3 *** AT5G07330.1)
+Solyc03g120090.1	A.28.75	A.34.75	4.76e-07	2.82e-09	2.913	0.00165	1.16e-05	2.911	Pyridoxal 5'-phosphate synthase pdxS subunit (AHRD V3.3 *** U9T0K3_RHIID)
+Solyc03g123540.3	A.28.75	A.34.75	1.29e-18	9.55e-22	5.698	8.5e-12	7.92e-15	5.714	17.4 kDa class III heat shock protein (AHRD V3.3 *** A0A2G3D1F4_CAPCH)
+Solyc04g005270.1	A.28.75	A.34.75	0.013	0.000168	1.236	0.00454	3.67e-05	1.234	Phosphatidylinositol 4-kinase gamma 7 (AHRD V3.3 *** A0A1U8GNT8_CAPAN)
+Solyc04g011440.4	A.28.75	A.34.75	4.99e-12	1.74e-14	5.04	3.91e-07	1.09e-09	5.037	ethylene-responsive heat shock protein cognate 70
+Solyc04g014480.3	A.28.75	A.34.75	8.74e-05	7.68e-07	2.654	0.000156	8.98e-07	2.671	15.7 kDa heat shock protein, peroxisomal (AHRD V3.3 *** A0A1U8GLK8_CAPAN)
+Solyc04g014500.3	A.28.75	A.34.75	0.0187	0.000252	-1.393	0.0499	0.000531	-1.401	Nudix hydrolase 4 (AHRD V3.3 *** A0A2G2XAD0_CAPBA)
+Solyc04g054190.3	A.28.75	A.34.75	0.0096	0.000117	1.806	NA	NA	NA	NA
+Solyc04g057890.3	A.28.75	A.34.75	0.00803	9.43e-05	2.609	0.0134	0.000127	2.63	Glutathione S-transferase family protein (AHRD V3.3 *** A0A2U1N1I4_ARTAN)
+Solyc04g072160.3	A.28.75	A.34.75	1.21e-18	7.66e-22	5.09	5.49e-12	4.69e-15	5.096	ripening regulated protein DDTFR8
+Solyc05g005910.4	A.28.75	A.34.75	7.3e-06	5.41e-08	3.198	2.44e-05	1.1e-07	3.224	Protein NRT1/ PTR FAMILY 1.2 (AHRD V3.3 *-* A0A1J3FWJ0_NOCCA)
+Solyc05g006290.2	A.28.75	A.34.75	1.76e-12	5.79e-15	7.921	6.08e-06	2.36e-08	7.38	F-box domain, Leucine-rich repeat domain, L domain-like protein (AHRD V3.3 *** A0A2U1LZM8_ARTAN)
+Solyc05g007895.1	A.28.75	A.34.75	6.87e-05	5.87e-07	3.081	4.85e-05	2.44e-07	3.1	RING/U-box superfamily protein (AHRD V3.3 *-* Q9LJE9_ARATH)
+Solyc05g008120.4	A.28.75	A.34.75	2.46e-09	1.17e-11	5.76	6.46e-05	3.46e-07	6.009	DnaJ-like protein subfamily B member 6 (AHRD V3.3 *-* A0A2G3B5R9_CAPCH)
+Solyc05g010210.1	A.28.75	A.34.75	1.61e-10	6.83e-13	6.855	9.3e-06	3.83e-08	7.207	F-box domain (AHRD V3.3 *-* A0A200QAM7_9MAGN)
+Solyc05g013440.3	A.28.75	A.34.75	0.000321	3.13e-06	1.778	0.00432	3.42e-05	1.786	Amine oxidase (AHRD V3.3 *** A0A2G2VMP6_CAPBA)
+Solyc05g014280.4	A.28.75	A.34.75	1.34e-13	3.54e-16	6.154	1.79e-07	4.59e-10	6.207	small heat shock protein 1
+Solyc05g046310.3	A.28.75	A.34.75	6.67e-17	7.77e-20	6.106	3.53e-06	1.26e-08	6.352	DBH-like monooxygenase (AHRD V3.3 *** AT5G35320.1)
+Solyc05g052410.3	A.28.75	A.34.75	6.55e-07	4.02e-09	2.076	2.14e-08	3.66e-11	2.078	Dehydration-responsive element-binding protein 2A (AHRD V3.3 *** A0A1U8GX89_CAPAN)
+Solyc05g052950.4	A.28.75	A.34.75	0.00332	3.73e-05	2.19	0.0474	0.000501	2.213	Regulator of chromosome condensation (RCC1) family protein (AHRD V3.3 *** Q9M2S1_ARATH)
+NA	NA	NA	NA	NA	NA	0.00368	2.8e-05	4.673	cilia- and flagella-associated protein 298-B-like isoform X1 (AHRD V3.3 *** XP_010321365.1)
+Solyc05g055010.4	A.28.75	A.34.75	0.000351	3.49e-06	3.393	NA	NA	NA	NA
+Solyc05g055470.4	A.28.75	A.34.75	0.00812	9.62e-05	1.205	0.00108	6.88e-06	1.202	NAC domain-containing protein 13 (AHRD V3.3 *** A0A2G2XV32_CAPAN)
+Solyc06g005160.4	A.28.75	A.34.75	0.0361	0.000512	1.245	NA	NA	NA	NA
+Solyc06g008130.4	A.28.75	A.34.75	0.00625	7.28e-05	1.814	0.0213	0.000212	1.822	SET-domain containing protein lysine methyltransferase family protein (AHRD V3.3 *-* F4K7E3_ARATH)
+Solyc06g011370.4	A.28.75	A.34.75	9.48e-09	5.02e-11	5.368	5.81e-07	1.71e-09	5.498	Chaperone protein ClpB (AHRD V3.3 *-* B2IUM0_NOSP7)
+Solyc06g036290.3	A.28.75	A.34.75	4.82e-06	3.42e-08	2.852	0.00737	6.35e-05	2.847	heat shock protein 90
+Solyc06g060300.1	A.28.75	A.34.75	0.00874	0.000105	1.808	NA	NA	NA	NA
+NA	NA	NA	NA	NA	NA	6.19e-06	2.5e-08	7.586	Protein kinase-like protein (AHRD V3.3 *** Q8LCP0_ARATH)
+Solyc06g068050.3	A.28.75	A.34.75	0.0187	0.000253	1.606	NA	NA	NA	NA
+NA	NA	NA	NA	NA	NA	0.000164	9.7e-07	6.902	microbial collagenase (AHRD V3.3 *** AT1G18060.1)
+NA	NA	NA	NA	NA	NA	0.00595	4.94e-05	2.853	hypothetical protein (AHRD V3.3 *** AT5G07950.1)
+Solyc06g072430.3	A.28.75	A.34.75	1.36e-09	6.03e-12	3.651	4.68e-05	2.27e-07	3.647	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g073820.3	A.28.75	A.34.75	0.0181	0.000239	2.09	NA	NA	NA	NA
+Solyc06g076520.1	A.28.75	A.34.75	1.66e-14	3.16e-17	6.199	8.09e-08	1.82e-10	6.245	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+NA	NA	NA	NA	NA	NA	0.000526	3.19e-06	6.668	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076560.2	A.28.75	A.34.75	5.5e-21	2.33e-24	6.309	2.69e-14	1.04e-17	6.323	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076570.4	A.28.75	A.34.75	2.03e-15	2.79e-18	7.391	2.9e-12	2.25e-15	7.56	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076670.3	A.28.75	A.34.75	0.00189	1.98e-05	1.223	0.000153	8.66e-07	1.221	RNA-binding (RRM/RBD/RNP motifs) family protein (AHRD V3.3 *-* A0A1P8AVT0_ARATH)
+Solyc06g083190.4	A.28.75	A.34.75	9.42e-18	9.97e-21	5.596	3.25e-11	3.78e-14	5.604	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G3CCB5_CAPCH)
+Solyc06g084390.3	A.28.75	A.34.75	0.0023	2.46e-05	1.687	0.00915	8.1e-05	1.691	ER auxin binding 1
+Solyc07g005210.3	A.28.75	A.34.75	1.36e-06	8.76e-09	3.961	0.016	0.000153	4.115	Outer membrane lipoprotein blc-like (AHRD V3.3 *** A0A2K3KEW8_TRIPR)
+Solyc07g006180.3	A.28.75	A.34.75	0.00028	2.67e-06	2.157	0.000945	5.95e-06	2.164	ripening regulated protein (DDTFR5)
+Solyc07g007500.3	A.28.75	A.34.75	2.58e-07	1.5e-09	3.521	7.22e-07	2.24e-09	3.551	nucleolin isoform X1 (AHRD V3.3 *-* XP_004242730.1)
+Solyc07g040960.1	A.28.75	A.34.75	0.0107	0.000135	1.63	0.0015	1.02e-05	1.628	Harbinger transposase-derived nuclease (AHRD V3.3 *** A0A200QD47_9MAGN)
+Solyc07g042250.3	A.28.75	A.34.75	9.27e-08	5.2e-10	2.401	5.61e-08	1.14e-10	2.404	chaperonin 21 precursor
+Solyc07g042930.3	A.28.75	A.34.75	0.016	0.00021	1.432	0.00595	4.95e-05	1.434	Rhomboid-like protein 14 (AHRD V3.3 *** A0A2K3N0Y0_TRIPR)
+Solyc07g045240.3	A.28.75	A.34.75	0.0107	0.000133	1.148	0.00309	2.3e-05	1.147	RNA-binding (RRM/RBD/RNP motifs) family protein (AHRD V3.3 *-* A0A2U1LP30_ARTAN)
+Solyc07g048120.3	A.28.75	A.34.75	1.64e-06	1.07e-08	1.916	7.42e-09	1.15e-11	1.915	ubiquitin fusion degradation protein 1 (AHRD V3.3 *** A0A2I4DSF8_9ROSI)
+Solyc07g053615.1	A.28.75	A.34.75	1.75e-05	1.35e-07	1.991	0.0128	0.000117	1.988	DnaJ like protein (AHRD V3.3 *** Q9FEW7_SOLLC)
+Solyc07g055400.2	A.28.75	A.34.75	1.85e-11	6.85e-14	5.158	1.42e-05	6.17e-08	5.323	Lectin-domain receptor-like kinase (AHRD V3.3 *-* G4XXY5_NICAT)
+Solyc07g056510.3	A.28.75	A.34.75	1.46e-14	2.63e-17	7.753	4.85e-05	2.49e-07	7.901	Glutathione S-transferase-like protein (AHRD V3.3 *** A0A2K3N2T5_TRIPR)
+NA	NA	NA	NA	NA	NA	0.029	0.000293	0.541	E3 ubiquitin-protein ligase UPL2 (AHRD V3.3 *** A0A2G3C2F6_CAPCH)
+Solyc07g065840.2	A.28.75	A.34.75	0.00215	2.28e-05	0.763	0.00049	2.93e-06	0.762	molecular chaperone Hsp90-2
+Solyc07g066070.3	A.28.75	A.34.75	6.56e-06	4.79e-08	3.092	0.0134	0.000125	3.156	KH domain-containing protein (AHRD V3.3 *** A0A1U8HDP0_CAPAN)
+Solyc08g006980.3	A.28.75	A.34.75	1.45e-09	6.73e-12	3.165	4.68e-05	2.29e-07	3.164	RING/U-box superfamily protein (AHRD V3.3 *** A0A2U1LIK0_ARTAN)
+Solyc08g062340.3	A.28.75	A.34.75	3.63e-13	9.98e-16	4.74	2.16e-07	5.71e-10	4.747	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3A1B9_CAPAN)
+Solyc08g062437.1	A.28.75	A.34.75	3.29e-14	6.97e-17	4.828	2.52e-08	4.51e-11	4.825	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3CY92_CAPCH)
+Solyc08g062960.4	A.28.75	A.34.75	1.91e-18	1.62e-21	5.442	1.73e-22	1.34e-26	5.474	Heat shock transcription factor (AHRD V3.3 *-* A0A1Y1I763_KLENI)
+Solyc08g067960.3	A.28.75	A.34.75	2.49e-05	1.98e-07	1.191	1.65e-06	5.78e-09	1.19	CHY-type/CTCHY-type/RING-type Zinc finger protein (AHRD V3.3 *** A0A2U1Q2D4_ARTAN)
+NA	NA	NA	NA	NA	NA	0.00237	1.71e-05	4.264	Late embryogenesis abundant protein Lea5 (AHRD V3.3 *** A0A1J3FNN3_NOCCA)
+NA	NA	NA	NA	NA	NA	0.0333	0.000341	0.751	Bax inhibitor
+Solyc08g078700.2	A.28.75	A.34.75	7.01e-14	1.71e-16	4.402	5.61e-08	1.18e-10	4.4	mitochondrial small heat shock protein
+Solyc08g079170.3	A.28.75	A.34.75	3.56e-06	2.49e-08	2.377	0.00626	5.3e-05	2.374	Hsp70-Hsp90 organizing protein 1 (AHRD V3.3 *** A0A1U8GC69_CAPAN)
+Solyc08g079260.3	A.28.75	A.34.75	0.0096	0.000117	2.408	0.0352	0.000366	2.435	TPR repeat-containing thioredoxin TDX (AHRD V3.3 *-* A0A2G2XKR1_CAPBA)
+Solyc08g079830.4	A.28.75	A.34.75	0.0375	0.000539	2.36	NA	NA	NA	NA
+Solyc08g081455.1	A.28.75	A.34.75	0.00306	3.33e-05	2.34	0.00263	1.94e-05	2.352	Unknown protein
+NA	NA	NA	NA	NA	NA	0.01	9.01e-05	5.901	Reticulon-like protein (AHRD V3.3 *** A0A2G3DAU6_CAPCH)
+Solyc08g082410.4	A.28.75	A.34.75	0.0187	0.000253	0.756	0.00737	6.32e-05	0.755	LOW protein: zinc finger CCCH domain protein (AHRD V3.3 *-* AT5G53440.2)
+Solyc09g005120.3	A.28.75	A.34.75	2.5e-05	2.01e-07	2.06	0.0173	0.000168	2.058	DnaJ protein ERDJ3A (AHRD V3.3 *** A0A2G2VZ69_CAPBA)
+Solyc09g005430.3	A.28.75	A.34.75	0.00026	2.45e-06	1.863	0.000112	6.16e-07	1.864	skin secretory protein xP2-like (AHRD V3.3 *** XP_019071199.1)
+Solyc09g007270.3	A.28.75	A.34.75	2.99e-09	1.49e-11	4.979	0.00419	3.25e-05	5.033	Ascorbate peroxidase (AHRD V3.3 *** Q42941_TOBAC)
+Solyc09g008200.4	A.28.75	A.34.75	2.44e-07	1.39e-09	5.026	1.17e-06	3.81e-09	5.131	heavy metal-associated isoprenylated plant protein 3-like (AHRD V3.3 *-* A0A1S4B4L4_TOBAC)
+Solyc09g008970.1	A.28.75	A.34.75	1.54e-12	4.88e-15	6.155	1.2e-06	3.99e-09	6.183	plant/protein (AHRD V3.3 *** AT3G10020.1)
+Solyc09g011030.3	A.28.75	A.34.75	6.2e-05	5.18e-07	3.474	6.19e-06	2.47e-08	3.495	Hsp70 nucleotide exchange factor FES1 (AHRD V3.3 *** A0A1J3K956_NOCCA)
+Solyc09g011080.3	A.28.75	A.34.75	0.000601	6.05e-06	1.07	0.00158	1.09e-05	1.068	Ribulose bisphosphate carboxylase/oxygenase activase, chloroplastic (AHRD V3.3 *** A0A2G2VP29_CAPBA)
+Solyc09g011160.4	A.28.75	A.34.75	1.24e-08	6.68e-11	4.298	5.75e-08	1.25e-10	4.346	Regulator of chromosome condensation (RCC1) family protein (AHRD V3.3 *** A0A1I9LSN5_ARATH)
+Solyc09g015000.4	A.28.75	A.34.75	3.1e-15	4.92e-18	6.361	2.95e-16	4.59e-20	6.436	Class I heat shock protein (AHRD V3.3 *** A0A2K3KSJ8_TRIPR)
+Solyc09g015010.2	A.28.75	A.34.75	2.14e-23	4.54e-27	7.259	6.56e-13	4.58e-16	7.43	Gag-asp_proteas domain-containing protein (AHRD V3.3 *-* A0A1Q3CQ35_CEPFO)
+Solyc09g015020.1	A.28.75	A.34.75	6.53e-11	2.63e-13	5.352	2.18e-07	5.93e-10	5.481	Class I heat shock protein (AHRD V3.3 *** A0A2K3KSJ8_TRIPR)
+NA	NA	NA	NA	NA	NA	0.0172	0.000166	0.794	PPPDE putative thiol peptidase family protein (AHRD V3.3 *** A0A2U1N5E2_ARTAN)
+Solyc09g074510.3	A.28.75	A.34.75	1.37e-05	1.03e-07	2.129	6.73e-07	2.04e-09	2.13	Tubby-like F-box protein (AHRD V3.3 *** A0A200QX79_9MAGN)
+Solyc09g075470.2	A.28.75	A.34.75	0.000283	2.73e-06	2.294	0.00329	2.48e-05	2.304	DnaJ-like protein subfamily B member 6 (AHRD V3.3 *** A0A2G2W0L3_CAPBA)
+Solyc09g075950.1	A.28.75	A.34.75	2.03e-15	2.75e-18	4.068	2.89e-09	4.04e-12	4.072	Heat shock protein 70 kDa (AHRD V3.3 *** A0A2K3P5L8_TRIPR)
+Solyc09g090760.4	A.28.75	A.34.75	5.86e-08	3.23e-10	4.045	7.61e-05	4.14e-07	4.13	Major facilitator superfamily protein (AHRD V3.3 *** A0A2U1PVI2_ARTAN)
+Solyc09g091520.2	A.28.75	A.34.75	0.00548	6.27e-05	-1.454	NA	NA	NA	NA
+Solyc09g092690.3	A.28.75	A.34.75	7.49e-14	1.9e-16	6.464	2.96e-09	4.37e-12	6.465	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G2W2H8_CAPBA)
+Solyc10g044470.3	A.28.75	A.34.75	0.0366	0.000524	2.032	NA	NA	NA	NA
+Solyc10g077100.1	A.28.75	A.34.75	0.00452	5.12e-05	1.263	0.0208	0.000205	1.264	Plant organelle RNA recognition domain containing protein (AHRD V3.3 *** A0A2P5FBL3_TREOI)
+Solyc10g078930.2	A.28.75	A.34.75	6.69e-07	4.18e-09	2.299	0.0025	1.82e-05	2.297	Activator of 90 kDa heat shock protein ATPase-like protein 1 (AHRD V3.3 *** A0A1J3GDI7_NOCCA)
+Solyc10g084170.1	A.28.75	A.34.75	1.45e-09	6.75e-12	4.209	4.34e-05	2.06e-07	4.208	Bag family molecular chaperone regulator mitochondrial-like (AHRD V3.3 *** A0A2K3P7D1_TRIPR)
+Solyc10g084400.2	A.28.75	A.34.75	0.0259	0.000356	1.621	NA	NA	NA	NA
+Solyc10g085040.1	A.28.75	A.34.75	0.00319	3.51e-05	2.219	0.0191	0.000187	2.235	Heme-binding-like protein (AHRD V3.3 *** A0A2I0X8X3_9ASPA)
+Solyc10g086410.3	A.28.75	A.34.75	2.01e-06	1.36e-08	1.72	2.66e-08	4.95e-11	1.719	LEHSC270  hsc-2heat shock protein cognate 70
+Solyc11g020040.2	A.28.75	A.34.75	2.77e-11	1.09e-13	4.783	8.77e-14	4.09e-17	4.816	heat shock protein 70
+Solyc11g020330.1	A.28.75	A.34.75	1.87e-10	8.11e-13	6.54	1.56e-05	6.91e-08	6.592	leer-sHSP small heat shock protein
+Solyc11g021215.1	A.28.75	A.34.75	0.0338	0.000468	2.461	NA	NA	NA	NA
+Solyc11g066060.3	A.28.75	A.34.75	0.00232	2.51e-05	1.645	NA	NA	NA	NA
+Solyc11g066100.2	A.28.75	A.34.75	5.71e-09	2.96e-11	3.088	0.000164	9.69e-07	3.085	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc11g066830.2	A.28.75	A.34.75	0.000931	9.56e-06	2.061	NA	NA	NA	NA
+Solyc11g068730.2	A.28.75	A.34.75	2.37e-05	1.86e-07	2.862	0.00134	8.94e-06	2.892	Nitrilase (AHRD V3.3 *** G4VV63_CAMSI)
+Solyc11g068940.1	A.28.75	A.34.75	3.12e-05	2.54e-07	2.92	5.67e-06	2.11e-08	2.933	RING-type E3 ubiquitin transferase (AHRD V3.3 *** A0A2G2VPS7_CAPBA)
+Solyc11g071830.2	A.28.75	A.34.75	1.39e-12	4.27e-15	4.784	9.63e-08	2.24e-10	4.78	DnaJ protein like (AHRD V3.3 *** A0A2I0X6P9_9ASPA)
+Solyc12g005980.2	A.28.75	A.34.75	0.013	0.000167	1.099	0.00158	1.09e-05	1.097	WLM domain-containing protein/PUB domain-containing protein (AHRD V3.3 *** A0A1Q3B398_CEPFO)
+Solyc12g010450.3	A.28.75	A.34.75	0.000988	1.02e-05	2.118	0.00121	7.81e-06	2.123	Protein phosphatase 2C (AHRD V3.3 *** B4FDN2_MAIZE)
+Solyc12g015880.2	A.28.75	A.34.75	1.97e-06	1.31e-08	2.542	0.00457	3.73e-05	2.538	Heat shock protein 90-1
+Solyc12g043110.2	A.28.75	A.34.75	0.000158	1.46e-06	2.016	6.08e-06	2.33e-08	2.016	LETSW12
+Solyc12g043120.2	A.28.75	A.34.75	0.000603	6.13e-06	1.25	3.25e-05	1.49e-07	1.249	Heat shock protein 70 family (AHRD V3.3 *** A0A200PNX6_9MAGN)
+Solyc12g056780.2	A.28.75	A.34.75	0.0107	0.000133	1.558	0.0134	0.000126	1.56	HSP20-like chaperone (AHRD V3.3 *** A0A2U1QD54_ARTAN)
+Solyc12g089210.2	A.28.75	A.34.75	1.53e-05	1.16e-07	3.247	1.23e-05	5.27e-08	3.271	Ornithine carbamoyltransferase (AHRD V3.3 *** A0A2G2YA09_CAPAN)
+Solyc12g099980.3	A.28.75	A.34.75	2.22e-12	7.51e-15	4.373	2.71e-09	3.56e-12	4.425	receptor-like protein 12 (AHRD V3.3 *** A0A1U8F785_CAPAN)
+Solyc12g099990.2	A.28.75	A.34.75	0.000182	1.69e-06	1.17	3.98e-05	1.86e-07	1.17	Calmodulin 5
+Solyc06g072430.3	F.28.15	F.34.15	1.75e-06	2.07e-10	2.512	0.00891	5.43e-07	2.524	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc01g081250.3	F.28.30	F.34.30	0.000107	2.27e-07	2.743	0.0331	3.66e-05	2.764	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g095320.4	F.28.30	F.34.30	1.57e-12	2.02e-15	2.998	4.28e-08	2.63e-11	3.005	Bag family molecular chaperone regulator 6-like protein (AHRD V3.3 *** A0A2K3PRI9_TRIPR)
+Solyc01g102960.3	F.28.30	F.34.30	2.89e-07	5.09e-10	3.386	0.00228	2.1e-06	3.421	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc01g104740.3	F.28.30	F.34.30	2.38e-16	2.51e-19	3.205	4.37e-09	2.15e-12	3.209	Multiprotein-bridging factor 1c (AHRD V3.3 *** A0A1U8F6N4_CAPAN)
+Solyc02g088610.4	F.28.30	F.34.30	0.000484	1.14e-06	2.043	NA	NA	NA	NA
+Solyc03g007890.3	F.28.30	F.34.30	1.01e-43	2.37e-47	3.769	2.48e-27	7.63e-31	3.774	class 2 small heat shock protein Le-HSP17.6
+Solyc03g115230.3	F.28.30	F.34.30	3.02e-36	1.42e-39	2.838	3.49e-28	6.44e-32	2.835	Solanum lycopersicum heat shock protein
+Solyc03g117630.1	F.28.30	F.34.30	0.0182	4.71e-05	2.119	NA	NA	NA	NA
+Solyc04g011440.4	F.28.30	F.34.30	6.08e-17	5.72e-20	3.196	5.58e-08	3.77e-11	3.216	ethylene-responsive heat shock protein cognate 70
+Solyc04g072160.3	F.28.30	F.34.30	1.75e-05	3.49e-08	3.238	NA	NA	NA	NA
+Solyc06g036290.3	F.28.30	F.34.30	7.5e-35	5.29e-38	3.335	1.02e-22	3.76e-26	3.334	heat shock protein 90
+Solyc06g072430.3	F.28.30	F.34.30	6.8e-40	2.4e-43	3.696	8e-29	9.83e-33	3.699	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g076020.3	F.28.30	F.34.30	5.74e-35	3.37e-38	1.968	1.01e-27	2.48e-31	1.962	heat shock protein 70 kD
+Solyc07g065840.2	F.28.30	F.34.30	6.22e-10	8.77e-13	0.941	1.77e-07	1.31e-10	0.935	molecular chaperone Hsp90-2
+Solyc08g006980.3	F.28.30	F.34.30	0.0249	6.72e-05	1.855	NA	NA	NA	NA
+Solyc08g062437.1	F.28.30	F.34.30	8.91e-06	1.68e-08	2.762	0.00309	3.04e-06	2.772	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3CY92_CAPCH)
+Solyc08g078700.2	F.28.30	F.34.30	2.8e-19	2.3e-22	3.388	4.83e-09	2.67e-12	3.41	mitochondrial small heat shock protein
+Solyc10g078930.2	F.28.30	F.34.30	0.000166	3.71e-07	0.895	0.0148	1.55e-05	0.89	Activator of 90 kDa heat shock protein ATPase-like protein 1 (AHRD V3.3 *** A0A1J3GDI7_NOCCA)
+Solyc10g084170.1	F.28.30	F.34.30	6.53e-09	1.08e-11	4.479	0.00056	4.82e-07	4.606	Bag family molecular chaperone regulator mitochondrial-like (AHRD V3.3 *** A0A2K3P7D1_TRIPR)
+Solyc11g066060.3	F.28.30	F.34.30	9.44e-13	1.11e-15	1.221	6.3e-10	2.71e-13	1.215	70 kDa heat shock protein (AHRD V3.3 *** Q943K7_ORYSJ)
+Solyc11g066100.2	F.28.30	F.34.30	1.5e-56	1.76e-60	2.999	1.94e-45	1.19e-49	2.996	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc11g071830.2	F.28.30	F.34.30	0.00852	2.1e-05	1.917	NA	NA	NA	NA
+Solyc12g015880.2	F.28.30	F.34.30	8.01e-10	1.22e-12	1.196	4.6e-06	3.67e-09	1.192	Heat shock protein 90-1
+Solyc01g081250.3	F.28.45	F.34.45	6.35e-21	5.94e-24	3.441	9.19e-15	7.06e-18	3.461	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g095320.4	F.28.45	F.34.45	2.5e-31	1.17e-34	3.528	5.29e-31	1.36e-34	3.538	Bag family molecular chaperone regulator 6-like protein (AHRD V3.3 *** A0A2K3PRI9_TRIPR)
+Solyc01g102960.3	F.28.45	F.34.45	2.44e-15	3.71e-18	3.423	1.61e-09	1.65e-12	3.457	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc01g104740.3	F.28.45	F.34.45	7.2e-11	1.52e-13	2.084	4.88e-06	7.51e-09	2.097	Multiprotein-bridging factor 1c (AHRD V3.3 *** A0A1U8F6N4_CAPAN)
+NA	NA	NA	NA	NA	NA	0.0339	6.95e-05	5.947	LeftsH6FtsH protease
+Solyc02g088610.4	F.28.45	F.34.45	7.05e-11	1.4e-13	2.755	1.15e-06	1.57e-09	2.775	LeHSP110/ClpB heat shock protein
+Solyc03g007890.3	F.28.45	F.34.45	2.91e-35	1.02e-38	3.713	1.02e-33	1.74e-37	3.723	class 2 small heat shock protein Le-HSP17.6
+Solyc03g082420.3	F.28.45	F.34.45	3.9e-06	1e-08	2.867	0.0494	0.000105	2.899	Small heat shock protein, chloroplastic (AHRD V3.3 *** HS21C_SOLLC)
+Solyc03g115230.3	F.28.45	F.34.45	2.91e-35	7.91e-39	2.84	2.29e-36	1.96e-40	2.846	Solanum lycopersicum heat shock protein
+Solyc03g117630.1	F.28.45	F.34.45	1.05e-20	1.1e-23	3.769	4.28e-12	3.65e-15	3.801	Heat shock 70 kDa protein (AHRD V3.3 *** A0A1U8FVW2_CAPAN)
+Solyc03g120090.1	F.28.45	F.34.45	0.00193	5.4e-06	1.229	NA	NA	NA	NA
+Solyc03g123540.3	F.28.45	F.34.45	4.16e-08	9.72e-11	4.116	0.0282	5.53e-05	4.308	17.4 kDa class III heat shock protein (AHRD V3.3 *** A0A2G3D1F4_CAPCH)
+Solyc04g011440.4	F.28.45	F.34.45	2.85e-25	2e-28	3.42	3.5e-16	2.24e-19	3.445	ethylene-responsive heat shock protein cognate 70
+Solyc04g072160.3	F.28.45	F.34.45	7.24e-20	9.32e-23	4.065	1.11e-08	1.23e-11	4.13	ripening regulated protein DDTFR8
+Solyc06g036290.3	F.28.45	F.34.45	1.86e-20	2.18e-23	2.964	4.08e-23	1.74e-26	2.971	heat shock protein 90
+Solyc06g072430.3	F.28.45	F.34.45	3.49e-26	2.04e-29	3.08	5.32e-23	2.72e-26	3.088	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g076020.3	F.28.45	F.34.45	0.0127	4.02e-05	1.262	NA	NA	NA	NA
+Solyc06g076560.2	F.28.45	F.34.45	1.3e-07	3.19e-10	3.126	0.00769	1.38e-05	3.181	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g083190.4	F.28.45	F.34.45	0.000307	8.26e-07	2.062	NA	NA	NA	NA
+Solyc08g062437.1	F.28.45	F.34.45	4.16e-15	6.81e-18	3.438	7.12e-12	6.68e-15	3.459	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3CY92_CAPCH)
+Solyc08g078700.2	F.28.45	F.34.45	4.26e-38	4.99e-42	3.754	2.42e-24	8.28e-28	3.775	mitochondrial small heat shock protein
+Solyc09g092690.3	F.28.45	F.34.45	2.75e-12	5.15e-15	4.214	7.03e-08	9e-11	4.264	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G2W2H8_CAPBA)
+Solyc10g078930.2	F.28.45	F.34.45	0.0113	3.43e-05	0.943	0.00797	1.5e-05	0.947	Activator of 90 kDa heat shock protein ATPase-like protein 1 (AHRD V3.3 *** A0A1J3GDI7_NOCCA)
+Solyc10g084170.1	F.28.45	F.34.45	1.73e-15	2.43e-18	3.746	4.76e-08	5.69e-11	3.786	Bag family molecular chaperone regulator mitochondrial-like (AHRD V3.3 *** A0A2K3P7D1_TRIPR)
+Solyc11g066060.3	F.28.45	F.34.45	0.011	3.23e-05	0.82	0.00761	1.3e-05	0.823	70 kDa heat shock protein (AHRD V3.3 *** Q943K7_ORYSJ)
+Solyc11g066100.2	F.28.45	F.34.45	1.26e-13	2.22e-16	2.392	8.35e-06	1.35e-08	2.398	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc11g071830.2	F.28.45	F.34.45	2.92e-24	2.39e-27	4.099	3.5e-16	2.39e-19	4.129	DnaJ protein like (AHRD V3.3 *** A0A2I0X6P9_9ASPA)
+Solyc12g015880.2	F.28.45	F.34.45	1.24e-08	2.77e-11	1.175	1.5e-06	2.18e-09	1.178	Heat shock protein 90-1
+Solyc01g068110.2	F.28.75	F.34.75	0.0249	0.000146	0.864	NA	NA	NA	NA
+Solyc01g081250.3	F.28.75	F.34.75	1.51e-41	1.78e-44	4.903	3.03e-44	1.29e-47	4.921	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g095320.4	F.28.75	F.34.75	8.18e-49	6.74e-52	4.304	2.29e-15	2.92e-18	4.328	Bag family molecular chaperone regulator 6-like protein (AHRD V3.3 *** A0A2K3PRI9_TRIPR)
+Solyc01g102960.3	F.28.75	F.34.75	7.59e-47	7.14e-50	4.792	4.99e-34	2.83e-37	4.817	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc01g104740.3	F.28.75	F.34.75	9.91e-33	1.63e-35	3.707	1.5e-31	1.06e-34	3.718	Multiprotein-bridging factor 1c (AHRD V3.3 *** A0A1U8F6N4_CAPAN)
+Solyc01g107080.3	F.28.75	F.34.75	1.46e-10	5.51e-13	5.293	0.000807	2.06e-06	5.542	HXXXD-type acyl-transferase family protein (AHRD V3.3 *** A0A2K3MRI0_TRIPR)
+Solyc02g077670.3	F.28.75	F.34.75	2.55e-12	8.7e-15	4.758	0.000283	6.62e-07	4.931	DnaJ-like protein (AHRD V3.3 *** Q9SP09_TOBAC)
+Solyc02g081550.3	F.28.75	F.34.75	8.85e-06	4.58e-08	3.911	NA	NA	NA	NA
+Solyc02g088610.4	F.28.75	F.34.75	9.37e-16	2.75e-18	2.68	3.35e-10	6.17e-13	2.695	LeHSP110/ClpB heat shock protein
+Solyc03g007890.3	F.28.75	F.34.75	7.08e-65	2.5e-68	4.257	9.34e-77	1.33e-80	4.265	class 2 small heat shock protein Le-HSP17.6
+Solyc03g031620.3	F.28.75	F.34.75	0.0163	9.42e-05	1.621	NA	NA	NA	NA
+Solyc03g082420.3	F.28.75	F.34.75	6.75e-25	1.67e-27	4.968	2.08e-10	3.69e-13	5.053	Small heat shock protein, chloroplastic (AHRD V3.3 *** HS21C_SOLLC)
+Solyc03g112140.4	F.28.75	F.34.75	1.33e-07	6.72e-10	3.309	0.0166	4.95e-05	3.384	MAP kinase kinase kinase 27
+Solyc03g115230.3	F.28.75	F.34.75	4.52e-75	5.32e-79	4.051	1.58e-89	1.12e-93	4.056	Solanum lycopersicum heat shock protein
+Solyc03g117630.1	F.28.75	F.34.75	1.13e-19	3.04e-22	4.316	4.14e-19	4.4e-22	4.342	Heat shock 70 kDa protein (AHRD V3.3 *** A0A1U8FVW2_CAPAN)
+Solyc03g120090.1	F.28.75	F.34.75	4.32e-08	1.93e-10	2.095	3.35e-07	7.12e-10	2.105	Pyridoxal 5'-phosphate synthase pdxS subunit (AHRD V3.3 *** U9T0K3_RHIID)
+Solyc03g123540.3	F.28.75	F.34.75	1.38e-26	2.92e-29	5.635	1.42e-07	2.91e-10	5.81	17.4 kDa class III heat shock protein (AHRD V3.3 *** A0A2G3D1F4_CAPCH)
+Solyc04g011440.4	F.28.75	F.34.75	3.12e-63	1.47e-66	4.964	4.72e-49	1.67e-52	4.984	ethylene-responsive heat shock protein cognate 70
+Solyc04g072160.3	F.28.75	F.34.75	3.52e-39	4.97e-42	5.168	1.26e-22	1.25e-25	5.215	ripening regulated protein DDTFR8
+Solyc04g072760.3	F.28.75	F.34.75	0.00857	4.84e-05	0.711	0.049	0.000166	0.713	Sulfate transporter (AHRD V3.3 *** S6A1Z9_NICAT)
+Solyc05g014280.4	F.28.75	F.34.75	3.9e-10	1.51e-12	4.273	0.00581	1.61e-05	4.439	small heat shock protein 1
+Solyc06g036290.3	F.28.75	F.34.75	1.52e-40	1.97e-43	4.329	2.88e-23	2.65e-26	4.338	heat shock protein 90
+Solyc06g072430.3	F.28.75	F.34.75	7.7e-59	5.43e-62	3.946	6.94e-54	1.48e-57	3.956	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g076020.3	F.28.75	F.34.75	8.62e-13	2.84e-15	1.846	2.44e-05	5.36e-08	1.848	heat shock protein 70 kD
+Solyc06g076520.1	F.28.75	F.34.75	3.56e-09	1.42e-11	3.444	0.00153	4.11e-06	3.519	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076560.2	F.28.75	F.34.75	2.54e-25	5.97e-28	4.236	6.37e-11	1.08e-13	4.292	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076570.4	F.28.75	F.34.75	1.21e-07	5.96e-10	3.938	0.0357	0.000111	4.104	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g083190.4	F.28.75	F.34.75	1.7e-26	3.79e-29	4.041	6.62e-13	9.85e-16	4.085	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G3CCB5_CAPCH)
+Solyc07g065840.2	F.28.75	F.34.75	0.00473	2.56e-05	0.859	0.000714	1.77e-06	0.861	molecular chaperone Hsp90-2
+Solyc08g006980.3	F.28.75	F.34.75	1.16e-19	3.27e-22	2.832	2.81e-13	3.98e-16	2.845	RING/U-box superfamily protein (AHRD V3.3 *** A0A2U1LIK0_ARTAN)
+Solyc08g062340.3	F.28.75	F.34.75	4.98e-31	8.79e-34	5.44	2.61e-09	5e-12	5.573	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3A1B9_CAPAN)
+Solyc08g062437.1	F.28.75	F.34.75	3.37e-36	5.15e-39	4.483	9.27e-33	5.92e-36	4.502	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3CY92_CAPCH)
+Solyc08g062960.4	F.28.75	F.34.75	1.14e-07	5.52e-10	3.481	0.00666	1.89e-05	3.555	Heat shock transcription factor (AHRD V3.3 *-* A0A1Y1I763_KLENI)
+Solyc08g078700.2	F.28.75	F.34.75	1.68e-44	1.78e-47	4.345	1.57e-43	7.81e-47	4.359	mitochondrial small heat shock protein
+Solyc08g079170.3	F.28.75	F.34.75	1.04e-08	4.28e-11	1.133	4.02e-09	7.98e-12	1.136	Hsp70-Hsp90 organizing protein 1 (AHRD V3.3 *** A0A1U8GC69_CAPAN)
+Solyc08g079830.4	F.28.75	F.34.75	0.0056	3.1e-05	2.088	NA	NA	NA	NA
+Solyc09g005120.3	F.28.75	F.34.75	8.32e-15	2.54e-17	1.342	8.39e-12	1.37e-14	1.345	DnaJ protein ERDJ3A (AHRD V3.3 *** A0A2G2VZ69_CAPBA)
+Solyc09g008970.1	F.28.75	F.34.75	1.56e-08	6.77e-11	3.409	0.000895	2.35e-06	3.479	plant/protein (AHRD V3.3 *** AT3G10020.1)
+NA	NA	NA	NA	NA	NA	0.0165	4.8e-05	5.964	Regulator of chromosome condensation (RCC1) family protein (AHRD V3.3 *** A0A1I9LSN5_ARATH)
+Solyc09g015000.4	F.28.75	F.34.75	1.03e-07	4.87e-10	4.434	0.049	0.000167	4.666	Class I heat shock protein (AHRD V3.3 *** A0A2K3KSJ8_TRIPR)
+Solyc09g015010.2	F.28.75	F.34.75	3.49e-11	1.23e-13	4.645	0.000622	1.5e-06	4.815	Gag-asp_proteas domain-containing protein (AHRD V3.3 *-* A0A1Q3CQ35_CEPFO)
+Solyc09g075950.1	F.28.75	F.34.75	0.000116	6.12e-07	2.138	0.0383	0.000122	2.157	Heat shock protein 70 kDa (AHRD V3.3 *** A0A2K3P5L8_TRIPR)
+Solyc09g092690.3	F.28.75	F.34.75	2.44e-61	1.44e-64	6.104	3e-30	2.34e-33	6.161	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G2W2H8_CAPBA)
+Solyc10g078930.2	F.28.75	F.34.75	2.02e-13	6.42e-16	1.984	4.06e-17	4.61e-20	1.987	Activator of 90 kDa heat shock protein ATPase-like protein 1 (AHRD V3.3 *** A0A1J3GDI7_NOCCA)
+Solyc10g084170.1	F.28.75	F.34.75	2.61e-28	5.22e-31	4.319	1.65e-15	1.99e-18	4.357	Bag family molecular chaperone regulator mitochondrial-like (AHRD V3.3 *** A0A2K3P7D1_TRIPR)
+NA	NA	NA	NA	NA	NA	0.0175	5.34e-05	6.105	RING-type E3 ubiquitin transferase (AHRD V3.3 *** A0A2G2VFH1_CAPBA)
+Solyc11g020330.1	F.28.75	F.34.75	6.79e-08	3.12e-10	4.444	0.0483	0.000157	4.702	leer-sHSP small heat shock protein
+Solyc11g066060.3	F.28.75	F.34.75	7.78e-11	2.84e-13	1.438	1.32e-12	2.07e-15	1.441	70 kDa heat shock protein (AHRD V3.3 *** Q943K7_ORYSJ)
+Solyc11g066100.2	F.28.75	F.34.75	6.82e-30	1.28e-32	3.178	2.03e-14	2.74e-17	3.181	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc11g066830.2	F.28.75	F.34.75	1.56e-08	6.61e-11	2.769	9.35e-05	2.12e-07	2.801	Zinc finger transcription factor 68
+Solyc11g071830.2	F.28.75	F.34.75	9.41e-74	2.21e-77	5.252	1.57e-49	4.44e-53	5.275	DnaJ protein like (AHRD V3.3 *** A0A2I0X6P9_9ASPA)
+Solyc12g005980.2	F.28.75	F.34.75	0.0331	0.000199	0.616	NA	NA	NA	NA
+Solyc12g015880.2	F.28.75	F.34.75	8.43e-21	2.18e-23	2.147	5.18e-24	4.41e-27	2.15	Heat shock protein 90-1
+Solyc11g066100.2	V.28.15	V.34.15	0.00392	4.68e-07	1.34	NA	NA	NA	NA
+Solyc01g104740.3	V.28.30	V.34.30	0.00191	1.57e-06	2.658	NA	NA	NA	NA
+Solyc03g007890.3	V.28.30	V.34.30	3.84e-06	1.35e-09	2.541	4.62e-05	8.53e-09	2.551	class 2 small heat shock protein Le-HSP17.6
+Solyc03g115230.3	V.28.30	V.34.30	6.69e-05	3.15e-08	1.669	0.000547	1.35e-07	1.673	Solanum lycopersicum heat shock protein
+Solyc06g036290.3	V.28.30	V.34.30	0.000364	2.14e-07	2.152	0.00172	5.3e-07	2.16	heat shock protein 90
+Solyc06g072430.3	V.28.30	V.34.30	1.16e-07	1.37e-11	2.785	2.74e-06	1.69e-10	2.796	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g076020.3	V.28.30	V.34.30	0.00118	8.34e-07	1.501	NA	NA	NA	NA
+Solyc08g062437.1	V.28.30	V.34.30	0.0284	2.67e-05	2.213	NA	NA	NA	NA
+Solyc11g066060.3	V.28.30	V.34.30	0.043	4.55e-05	0.951	NA	NA	NA	NA
+Solyc11g066100.2	V.28.30	V.34.30	2.48e-06	5.84e-10	1.825	5.28e-06	6.49e-10	1.83	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc01g081250.3	V.28.45	V.34.45	5.85e-11	6.15e-14	2.955	4.73e-10	1.44e-13	2.965	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g095320.4	V.28.45	V.34.45	1.97e-12	1.38e-15	3.561	0.000292	3.33e-07	3.572	Bag family molecular chaperone regulator 6-like protein (AHRD V3.3 *** A0A2K3PRI9_TRIPR)
+Solyc01g102960.3	V.28.45	V.34.45	9.11e-10	1.17e-12	3.213	1.68e-08	6.36e-12	3.23	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc01g104740.3	V.28.45	V.34.45	5.52e-08	9.03e-11	2.829	0.0105	1.99e-05	2.834	Multiprotein-bridging factor 1c (AHRD V3.3 *** A0A1U8F6N4_CAPAN)
+Solyc02g079930.3	V.28.45	V.34.45	0.0336	0.000133	1.076	NA	NA	NA	NA
+Solyc02g088610.4	V.28.45	V.34.45	7.3e-09	1.02e-11	2.899	5.67e-07	3.01e-10	2.915	LeHSP110/ClpB heat shock protein
+Solyc03g007890.3	V.28.45	V.34.45	2.02e-12	1.65e-15	3.107	0.000331	4.02e-07	3.114	class 2 small heat shock protein Le-HSP17.6
+Solyc03g082420.3	V.28.45	V.34.45	0.000426	1.29e-06	3.078	0.00203	3.08e-06	3.11	Small heat shock protein, chloroplastic (AHRD V3.3 *** HS21C_SOLLC)
+Solyc03g115230.3	V.28.45	V.34.45	6.7e-12	6.25e-15	2.683	0.000724	9.89e-07	2.684	Solanum lycopersicum heat shock protein
+Solyc03g117630.1	V.28.45	V.34.45	1.45e-06	2.87e-09	2.282	0.000114	1.13e-07	2.292	Heat shock 70 kDa protein (AHRD V3.3 *** A0A1U8FVW2_CAPAN)
+Solyc03g120090.1	V.28.45	V.34.45	0.00661	2.31e-05	1.201	NA	NA	NA	NA
+Solyc03g123540.3	V.28.45	V.34.45	1.5e-06	3.14e-09	3.453	0.00445	7.42e-06	3.522	17.4 kDa class III heat shock protein (AHRD V3.3 *** A0A2G3D1F4_CAPCH)
+Solyc04g011440.4	V.28.45	V.34.45	2.77e-10	3.24e-13	2.994	4.73e-10	1.24e-13	3.004	ethylene-responsive heat shock protein cognate 70
+Solyc04g072160.3	V.28.45	V.34.45	2.6e-06	5.77e-09	3.055	3.15e-05	2.63e-08	3.077	ripening regulated protein DDTFR8
+Solyc05g053570.4	V.28.45	V.34.45	0.016	5.79e-05	-0.727	NA	NA	NA	NA
+Solyc06g036290.3	V.28.45	V.34.45	1.85e-14	4.32e-18	2.864	3.04e-05	2.3e-08	2.87	heat shock protein 90
+Solyc06g072430.3	V.28.45	V.34.45	3.36e-13	1.57e-16	2.919	7.46e-05	6.8e-08	2.919	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g076020.3	V.28.45	V.34.45	0.000412	1.2e-06	1.048	NA	NA	NA	NA
+Solyc06g076560.2	V.28.45	V.34.45	0.00122	4e-06	2.678	0.0199	3.93e-05	2.712	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g083190.4	V.28.45	V.34.45	0.0161	6.02e-05	1.943	NA	NA	NA	NA
+Solyc07g053615.1	V.28.45	V.34.45	0.0172	6.61e-05	1.093	NA	NA	NA	NA
+Solyc08g006980.3	V.28.45	V.34.45	3.27e-05	8.4e-08	2.112	0.00203	2.98e-06	2.127	RING/U-box superfamily protein (AHRD V3.3 *** A0A2U1LIK0_ARTAN)
+Solyc08g062437.1	V.28.45	V.34.45	1.74e-08	2.63e-11	2.9	2.79e-08	1.27e-11	2.91	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3CY92_CAPCH)
+Solyc08g062960.4	V.28.45	V.34.45	1.38e-06	2.57e-09	4.031	0.0489	1e-04	4.203	Heat shock transcription factor (AHRD V3.3 *-* A0A1Y1I763_KLENI)
+Solyc08g078700.2	V.28.45	V.34.45	1.54e-17	1.8e-21	3.357	1.96e-17	1.49e-21	3.366	mitochondrial small heat shock protein
+Solyc09g005120.3	V.28.45	V.34.45	0.00541	1.83e-05	1.013	0.00886	1.61e-05	1.014	DnaJ protein ERDJ3A (AHRD V3.3 *** A0A2G2VZ69_CAPBA)
+Solyc09g092690.3	V.28.45	V.34.45	2.2e-05	5.4e-08	2.744	0.000338	4.37e-07	2.766	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G2W2H8_CAPBA)
+Solyc10g078930.2	V.28.45	V.34.45	0.00044	1.39e-06	0.837	0.00221	3.53e-06	0.837	Activator of 90 kDa heat shock protein ATPase-like protein 1 (AHRD V3.3 *** A0A1J3GDI7_NOCCA)
+Solyc10g084170.1	V.28.45	V.34.45	0.000121	3.24e-07	2.382	0.00885	1.55e-05	2.403	Bag family molecular chaperone regulator mitochondrial-like (AHRD V3.3 *** A0A2K3P7D1_TRIPR)
+Solyc11g066060.3	V.28.45	V.34.45	3.26e-06	7.61e-09	0.931	8.21e-06	5.61e-09	0.93	70 kDa heat shock protein (AHRD V3.3 *** Q943K7_ORYSJ)
+Solyc11g066100.2	V.28.45	V.34.45	1.18e-12	6.9e-16	2.263	0.000292	3.11e-07	2.265	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc11g066830.2	V.28.45	V.34.45	0.000229	6.42e-07	2.207	NA	NA	NA	NA
+Solyc11g071830.2	V.28.45	V.34.45	1.85e-13	6.47e-17	3.11	1.37e-12	2.07e-16	3.12	DnaJ protein like (AHRD V3.3 *** A0A2I0X6P9_9ASPA)
+Solyc12g015880.2	V.28.45	V.34.45	1.18e-06	2.07e-09	1.263	3.95e-06	2.4e-09	1.262	Heat shock protein 90-1
+Solyc01g081250.3	V.28.75	V.34.75	1.52e-30	5.31e-34	4.607	2.06e-14	1.59e-17	4.628	Glutathione S-transferase (AHRD V3.3 *** A0A200PVK3_9MAGN)
+Solyc01g095320.4	V.28.75	V.34.75	6.63e-24	8.49e-27	3.927	9.83e-10	1.43e-12	3.942	Bag family molecular chaperone regulator 6-like protein (AHRD V3.3 *** A0A2K3PRI9_TRIPR)
+Solyc01g102960.3	V.28.75	V.34.75	1.37e-25	1.44e-28	4.308	5.26e-10	7.21e-13	4.352	22.0 kDa class IV heat shock protein (AHRD V3.3 *** A0A2G3ATG3_CAPCH)
+Solyc01g104740.3	V.28.75	V.34.75	6.9e-17	1.52e-19	2.872	1.18e-17	5.04e-21	2.88	Multiprotein-bridging factor 1c (AHRD V3.3 *** A0A1U8F6N4_CAPAN)
+Solyc01g106210.3	V.28.75	V.34.75	0.0106	5.44e-05	0.991	NA	NA	NA	NA
+Solyc01g107080.3	V.28.75	V.34.75	4.23e-10	1.28e-12	4.047	0.000194	4.83e-07	4.131	HXXXD-type acyl-transferase family protein (AHRD V3.3 *** A0A2K3MRI0_TRIPR)
+Solyc02g077670.3	V.28.75	V.34.75	2.11e-05	8.8e-08	3.094	0.00265	7.28e-06	3.149	DnaJ-like protein (AHRD V3.3 *** Q9SP09_TOBAC)
+Solyc02g079930.3	V.28.75	V.34.75	0.0163	8.55e-05	1.026	NA	NA	NA	NA
+Solyc02g081550.3	V.28.75	V.34.75	4.06e-09	1.28e-11	4.935	0.00457	1.29e-05	5.168	LeftsH6FtsH protease
+Solyc02g088610.4	V.28.75	V.34.75	2.85e-10	8.3e-13	2.682	3.7e-09	6.66e-12	2.693	LeHSP110/ClpB heat shock protein
+Solyc03g007890.3	V.28.75	V.34.75	1.12e-26	9.15e-30	3.755	1.02e-10	1.23e-13	3.766	class 2 small heat shock protein Le-HSP17.6
+Solyc03g082420.3	V.28.75	V.34.75	1.81e-11	4.62e-14	3.505	2.64e-08	4.97e-11	3.543	Small heat shock protein, chloroplastic (AHRD V3.3 *** HS21C_SOLLC)
+Solyc03g115230.3	V.28.75	V.34.75	7.04e-26	6.56e-29	3.4	2.85e-10	3.67e-13	3.41	Solanum lycopersicum heat shock protein
+Solyc03g117630.1	V.28.75	V.34.75	4.86e-29	3.39e-32	3.892	2.1e-21	3.6e-25	3.909	Heat shock 70 kDa protein (AHRD V3.3 *** A0A1U8FVW2_CAPAN)
+Solyc03g120090.1	V.28.75	V.34.75	1.36e-07	4.76e-10	1.725	4.6e-06	1.06e-08	1.731	Pyridoxal 5'-phosphate synthase pdxS subunit (AHRD V3.3 *** U9T0K3_RHIID)
+Solyc03g123540.3	V.28.75	V.34.75	2.24e-19	4.18e-22	5.906	4.06e-08	8e-11	6.074	17.4 kDa class III heat shock protein (AHRD V3.3 *** A0A2G3D1F4_CAPCH)
+Solyc04g011440.4	V.28.75	V.34.75	1.68e-21	2.34e-24	3.803	1.95e-09	3.35e-12	3.814	ethylene-responsive heat shock protein cognate 70
+Solyc04g064500.4	V.28.75	V.34.75	0.0398	0.000227	-0.368	0.0169	5.66e-05	-0.367	Protein phosphatase 2C (AHRD V3.3 *** Q8S8Z0_MESCR)
+Solyc04g072160.3	V.28.75	V.34.75	1.96e-20	3.42e-23	4.436	2.38e-15	1.43e-18	4.469	ripening regulated protein DDTFR8
+Solyc05g007895.1	V.28.75	V.34.75	0.000868	3.84e-06	3.075	NA	NA	NA	NA
+Solyc05g014280.4	V.28.75	V.34.75	1.35e-08	4.57e-11	5.366	0.00852	2.63e-05	5.684	small heat shock protein 1
+Solyc05g052410.3	V.28.75	V.34.75	0.0176	9.4e-05	1.139	NA	NA	NA	NA
+Solyc06g036290.3	V.28.75	V.34.75	9.75e-31	2.27e-34	3.394	2.08e-12	2.32e-15	3.4	heat shock protein 90
+Solyc06g072430.3	V.28.75	V.34.75	2.66e-18	5.26e-21	3.284	2.79e-07	5.98e-10	3.291	BAG family molecular chaperone regulator 5, mitochondrial (AHRD V3.3 *-* A0A2I0XHJ2_9ASPA)
+Solyc06g076020.3	V.28.75	V.34.75	4.26e-07	1.54e-09	1.362	0.0371	0.000134	1.367	heat shock protein 70 kD
+NA	NA	NA	NA	NA	NA	0.00617	1.8e-05	4.766	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g076560.2	V.28.75	V.34.75	6.98e-11	1.87e-13	3.951	1.13e-09	1.75e-12	3.985	Class I heat shock protein (AHRD V3.3 *** A0A2K3M3P7_TRIPR)
+Solyc06g083190.4	V.28.75	V.34.75	5.46e-09	1.78e-11	3.551	0.00867	2.75e-05	3.579	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G3CCB5_CAPCH)
+Solyc07g048120.3	V.28.75	V.34.75	0.0398	0.000231	0.755	NA	NA	NA	NA
+Solyc07g053615.1	V.28.75	V.34.75	0.0178	9.92e-05	1.031	NA	NA	NA	NA
+Solyc07g065840.2	V.28.75	V.34.75	0.00384	1.79e-05	0.683	0.00177	4.55e-06	0.685	molecular chaperone Hsp90-2
+Solyc08g006980.3	V.28.75	V.34.75	1.18e-20	1.93e-23	3.069	1.71e-13	1.46e-16	3.087	RING/U-box superfamily protein (AHRD V3.3 *** A0A2U1LIK0_ARTAN)
+Solyc08g062340.3	V.28.75	V.34.75	2.59e-10	7.22e-13	4.107	1e-07	2.06e-10	4.161	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3A1B9_CAPAN)
+Solyc08g062437.1	V.28.75	V.34.75	2.64e-29	1.23e-32	3.824	1.6e-26	1.37e-30	3.838	17.9 kDa class II heat shock protein (AHRD V3.3 *** A0A2G3CY92_CAPCH)
+Solyc08g062960.4	V.28.75	V.34.75	2.11e-05	8.85e-08	3.943	0.0104	3.4e-05	4.069	Heat shock transcription factor (AHRD V3.3 *-* A0A1Y1I763_KLENI)
+Solyc08g078700.2	V.28.75	V.34.75	4.86e-29	3.17e-32	3.747	1.19e-12	1.22e-15	3.75	mitochondrial small heat shock protein
+Solyc08g079170.3	V.28.75	V.34.75	0.00475	2.27e-05	1.104	NA	NA	NA	NA
+Solyc08g079830.4	V.28.75	V.34.75	0.00311	1.41e-05	2.368	NA	NA	NA	NA
+Solyc09g005120.3	V.28.75	V.34.75	0.00756	3.78e-05	0.967	0.00678	2.04e-05	0.971	DnaJ protein ERDJ3A (AHRD V3.3 *** A0A2G2VZ69_CAPBA)
+NA	NA	NA	NA	NA	NA	2.1e-05	5.03e-08	7.354	Gag-asp_proteas domain-containing protein (AHRD V3.3 *-* A0A1Q3CQ35_CEPFO)
+Solyc09g075950.1	V.28.75	V.34.75	0.0051	2.49e-05	1.795	NA	NA	NA	NA
+Solyc09g092690.3	V.28.75	V.34.75	3.35e-21	5.06e-24	4.229	2.82e-20	7.26e-24	4.25	Peptidylprolyl isomerase (AHRD V3.3 *** A0A2G2W2H8_CAPBA)
+Solyc10g078930.2	V.28.75	V.34.75	2.29e-14	5.6e-17	1.654	3.31e-15	2.27e-18	1.658	Activator of 90 kDa heat shock protein ATPase-like protein 1 (AHRD V3.3 *** A0A1J3GDI7_NOCCA)
+Solyc10g084170.1	V.28.75	V.34.75	2.04e-16	4.75e-19	3.715	9.64e-13	9.09e-16	3.74	Bag family molecular chaperone regulator mitochondrial-like (AHRD V3.3 *** A0A2K3P7D1_TRIPR)
+Solyc11g020330.1	V.28.75	V.34.75	8.77e-07	3.27e-09	4.05	0.0221	7.59e-05	4.222	leer-sHSP small heat shock protein
+Solyc11g066060.3	V.28.75	V.34.75	9.09e-06	3.49e-08	1.105	1.44e-06	3.2e-09	1.109	70 kDa heat shock protein (AHRD V3.3 *** Q943K7_ORYSJ)
+Solyc11g066100.2	V.28.75	V.34.75	6.41e-25	7.46e-28	2.833	1.13e-09	1.84e-12	2.842	Heat shock protein 70 (AHRD V3.3 *** S8C6K2_9LAMI)
+Solyc11g066830.2	V.28.75	V.34.75	2.11e-05	8.53e-08	2.473	0.0025	6.64e-06	2.501	Zinc finger transcription factor 68
+Solyc11g071830.2	V.28.75	V.34.75	1.01e-33	1.17e-37	4.892	6.05e-16	3.11e-19	4.914	DnaJ protein like (AHRD V3.3 *** A0A2I0X6P9_9ASPA)
+NA	NA	NA	NA	NA	NA	0.0498	0.000184	5.614	Protein phosphatase 2C (AHRD V3.3 *** B4FDN2_MAIZE)
+Solyc12g015880.2	V.28.75	V.34.75	7.98e-18	1.67e-20	1.927	1.27e-18	4.37e-22	1.931	Heat shock protein 90-1
+Solyc12g043120.2	V.28.75	V.34.75	0.0178	9.78e-05	0.64	NA	NA	NA	NA
+Solyc12g056780.2	V.28.75	V.34.75	6.75e-05	2.91e-07	2.714	0.0328	0.000115	2.783	HSP20-like chaperone (AHRD V3.3 *** A0A2U1QD54_ARTAN)

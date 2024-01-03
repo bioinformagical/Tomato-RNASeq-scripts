@@ -1,0 +1,61 @@
+#
+# This is a Shiny web application. You can run the application by clicking
+# the 'Run App' button above.
+#
+# Find out more about building applications with Shiny here:
+#
+#    http://shiny.rstudio.com/
+#
+library(shiny)
+source("Common.R")
+sample_sheet = getSampleExcelSpreadsheet()  
+scaled_counts=getScaledCounts(assembly = "SL4")
+scaled_counts = rbind(scaled_counts,getScaledCounts(assembly = "SL5"))
+# Define UI for application that draws a histogram
+ui <- fluidPage(
+  # Application title
+  titlePanel("RNA-Seq expression profile"),
+  # Sidebar with a slider input for number of bins 
+  sidebarLayout(
+    sidebarPanel(
+      textInput("gene_name","Enter a gene name",
+                value="Solyc02g083860.3")
+    ),
+    # Show a plot of the generated distribution
+    mainPanel(
+      plotOutput("barplot")
+    )
+  )
+)
+# Define server logic required to draw a histogram
+server <- function(input, output) {
+  output$barplot <- renderPlot({
+    gene_name=input$gene_name
+    main = gene_name
+    dat = scaled_counts
+    ylab="cpm (scaled counts)"
+    description_index = which(names(scaled_counts)=="description")
+    if (length(description_index)==1) {
+      description_index = description_index[1]
+      description = scaled_counts[gene_name,description_index]
+      if (description=="NA") {
+        description==paste("No description available for",gene_name)
+      }
+      main = description
+      dat = scaled_counts[,-(description_index)]
+    }
+    sample_colors = getSampleColors(names(dat),
+                                    sample_sheet = sample_sheet)
+    rowdata=dat[gene_name,names(dat)]
+    rowdata=as.numeric(rowdata)
+    names(rowdata)=names(sample_colors)
+    barplot(rowdata,
+            #              beside=beside,
+            main=main,
+            col=sample_colors,
+            las=2,
+            ylab=ylab)
+  })
+}
+# Run the application 
+shinyApp(ui = ui, server = server)

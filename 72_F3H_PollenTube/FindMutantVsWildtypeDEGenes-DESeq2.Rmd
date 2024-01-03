@@ -1,0 +1,266 @@
+---
+title: "Find DE genes from SL4 and SL5 comparing mutant and wildtype genotypes"
+author: "Ann Loraine"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+* * *
+
+# Prelude - define variables 
+
+```{r define_variables, message=TRUE, warning=FALSE}
+assemblies=c("SL4","SL5")
+Q = 0.01
+lfcThreshold=1
+outfname_prefix="results/MvW"
+```
+
+* * *
+
+# Introduction
+
+We observed in prior work that:
+
+* clustering analysis showed that gene expression in VF36 and F3H lines were similar, and both were very different from _are_ (anthocyanin-reduced mutant)
+* many more genes were differentially expressed in the _are_ mutant in response to temperature than in the other two
+* the greatest number of gene expression changes in response to temperature occurred in the 75 minutes time point, the longest duration of heat stress tested in this experiment
+
+We also know from experimental work that pollen tubes in _are_ 
+are less able to achieve fertilization.
+
+These observations raise new questions:
+
+* How does gene expression differ between _are_ and the other two lines, with and without heat stess? 
+
+To answer this question, we will investigate gene expression differences between VF36 and _are_ experiencing the same temperature, across and within treatment duration.
+
+We will only consider VF36 here because we know from dimensionality reduction analyses that F3H and VF36 are very similar. 
+
+Goal: Find and interpret how gene expression in _are_ differs from gene expression in VF36, irrespective of temperature.
+
+* * *
+
+# Results
+
+Load code:
+
+```{r load_code, message=FALSE, warning=FALSE}
+source("Common.R")
+library(DESeq2)
+```
+
+Read counts data for assemblies `r assemblies`:
+
+```{r read_it_all}
+dfs = list()
+for (assembly in assemblies) {
+  dfs[[assembly]]=getCounts(assembly=assembly,
+                            keep_description = T)
+}
+```
+
+Fit a model that compares _are_ to VF36 at 28 degrees C, no heat stress, including 
+treatment durations as a variable:
+
+```{r model_temp_genotype, message=FALSE, warning=FALSE}
+ddss = list()
+for (assembly in assemblies) {
+  d = dfs[[assembly]]
+  desc_index = which(names(d)=="description")
+  d = d[,-desc_index]
+  toks = strsplit(names(d),"\\.")
+  genotype=sapply(toks,function(x){x[[1]]})
+  temperature=sapply(toks,function(x){x[[2]]})
+  time=sapply(toks,function(x){x[[3]]})
+  v = genotype%in%c("A","V")&temperature==28
+  d = d[,v]
+  coldata=data.frame(genotype=factor(genotype[v],levels=c("V","A")),
+                     time=factor(time[v]))
+  row.names(coldata)=names(d)
+  cts = round(as.matrix(d))
+  dds = DESeqDataSetFromMatrix(countData=cts,
+                                colData=coldata,
+                                design=~time + genotype)
+  featureData = data.frame(gene=rownames(cts))
+  mcols(dds) = DataFrame(mcols(dds), featureData)
+  dds = DESeq(dds, minReplicatesForReplace=Inf)
+  ddss[[assembly]]=dds
+}
+```
+
+The above code creates a linear model that captures/estimates the contribution of treatment duration and genotype to gene expression levels, per gene. 
+
+Collect results:
+
+```{r collect_results}
+rss=list()
+vs = list()
+for (assembly in assemblies) {
+  dds=ddss[[assembly]]
+  rs = results(dds,alpha=Q,contrast=c("genotype","A","V"))
+  rs = rs[!is.na(rs$padj)&!is.na(rs$log2FoldChange),]
+  rs=cbind(gene=row.names(rs),group1="A.28",group2="V.28",rs)
+  rs$description = dfs[[assembly]][rs$gene,"description"]
+  o = order(rs$pvalue)
+  rs = rs[o,]
+  rss[[assembly]] = data.frame(rs)
+  vs[[assembly]] = rss[[assembly]]$padj<=Q & 
+    rss[[assembly]]$log2FoldChange>=lfcThreshold
+}
+```
+
+The previous code chunk collected results from evaluating the null hypothesis that the difference between _are_ and VF36 gene expression, added up over all time points, was non-zero.
+
+The above code identified `r prettyNumber(sum(vs[["SL4"]]))` and `r prettyNumber(sum(vs[["SL5"]]))`
+genes from assemblies SL4 and SL5, respectively, where the adjusted p value was less than or equal to `r Q` and the  log2 fold-change, calculated as the logarithm base 2 of the average gene expression of _are_ divided by average gene expression of VF36, was greater than or equal to `r lfcThreshold`. 
+
+Next, we test the data again, this time looking for genes that were differentially expressed in _are_ versus VF36 samples exposed to the same temperature for the same amount of time. 
+
+To start, define a function that compares samples and collects results:
+
+```{r function_compareTwoGroups}
+compareTwoGroups = function(counts,group1_name,group2_name) {
+  group1_indexes=grep(group1_name,names(counts)) 
+  group2_indexes=grep(group2_name,names(counts))
+  indexes=c(group1_indexes,group2_indexes)
+  condition = factor(c(rep(group1_name,
+                           length(group1_indexes)),
+                       rep(group2_name,length(group2_indexes))))
+  m = round(as.matrix(counts[,indexes]))
+  dds = DESeqDataSetFromMatrix(m,
+                               DataFrame(condition),
+                               ~ condition)
+  featureData = data.frame(gene=rownames(m))
+  mcols(dds) = DataFrame(mcols(dds),featureData)
+  dds = DESeq(dds, minReplicatesForReplace=Inf)
+  return(dds)
+}
+```
+
+Create a data frame that defines the comparisons we will do, which include
+comparing _are_ to VF36, same temperature and same treatment duration:
+
+```{r define_comparisons}
+A = c("A.28.15","A.28.30","A.28.45","A.28.75")
+A = c(A,str_replace_all(A,"28","34"))
+V = str_replace_all(A,"A","V")
+comps = data.frame(group1=V,group2=A)
+```
+
+The previous code chunk defined `r nrow(comps)` comparisons, one per treatment duration, per treatment.
+
+Perform the comparisons, using the previously defined function, and collect the results:
+
+```{r compare_groups, message=FALSE, warning=FALSE}
+for (assembly in assemblies) {
+  counts = dfs[[assembly]]
+  for (iter in 1:nrow(comps)) {
+    group_1 = comps[iter,1]
+    group_2 = comps[iter,2]
+    dds = compareTwoGroups(counts,group_1,group_2)
+    rs = results(dds,alpha=Q)
+    rs = rs[!is.na(rs$padj),]
+    rs=cbind(gene=row.names(rs),group1=group_1,
+             group2=group_2,rs)
+    rs$description = counts[rs$gene,"description"]
+    o = order(rs$pvalue)
+    rs = data.frame(rs[o,])
+    rss[[assembly]] = rbind(rss[[assembly]],rs)
+  }
+}
+```
+
+Summarize the results from each comparison: 
+
+```{r summarize_results}
+for (assembly in assemblies) {
+  comps[,assembly]=0
+  for (iter in 1:nrow(comps)) {
+    group_1 = comps[iter,1]
+    group_2 = comps[iter,2]
+    rs = rss[[assembly]]
+    rs = rs[rs$group1 == group_1 & rs$group2 == group_2,]
+    v = rs$padj<=Q & rs$log2FoldChange>=lfcThreshold
+    num_genes=sum(v)
+    comps[iter,assembly]=num_genes
+  }
+}
+```
+
+Summarize results: 
+
+```{r print_results}
+comps
+```
+
+The preceding table reports the number of genes per comparison with adjusted p value less than or equal to `r Q` and log2(fold-change) greater than or equal to `r lfcThreshold`.
+
+Write the results to files, one file per assembly:
+
+```{r}
+for (assembly in assemblies) {
+  fname = paste0(outfname_prefix,"-",assembly,".txt")
+  rs = rss[[assembly]]
+  rs = rs[,c("gene","group1","group2","baseMean",
+             "log2FoldChange","lfcSE","padj",
+             "pvalue","stat","description")]
+  for (i in 4:9) {
+    rs[,i]=signif(rs[,i],3)
+  }
+  if (assembly == "SL5") {
+    SL4_gene_names = getSL4GeneNames(rs$description)
+    rs$SL4 = SL4_gene_names
+  }
+  write.table(rs,fname,row.names = F,col.names = T,
+              quote=F,sep="\t")
+}
+```
+
+Files were created created named `r paste0(outfname_prefix,"-[assembly].txt")` with all results, with no cutoffs for reporting results.
+
+All numeric values were rounded to three significant digits.
+
+Explanation of columns:
+
+* gene - gene measured (from SL4 or SL5)
+* group 1 - fold-change denominator; control group
+* group 2 - fold-change numerator; treatment group
+* baseMean - mean across samples
+* log2FoldChange - log2(group 2 average/group 1 average)
+* lfcsE - log2FoldChange standard error
+* padj - false discovery rate; adjusted p-value computed using method of Benjamini and Hochberg
+* stat - test statistic used to assess significance 
+* description - gene description 
+* SL4 - SL5 assembly results only; putative SL4 (June 2019 assembly release) gene counterpart
+
+The first rows of the results files contain the results from comparing _are_ to VF36, including duration times points, together. 
+
+* * *
+
+# Discussion
+
+In nearly all comparisons, more genes were identified in the SL5 annotations, perhaps reflecting improvements in the annotation for this newer assembly.
+
+As expected from the previously observed clustering results, many genes were differentially expressed between the two genotypes. 
+
+* * *
+
+# Conclusions
+
+* Genes differently expressed between _are_ and VF36 were identified. 
+* Files were written to the "results" directory, one per assembly. 
+
+* * * 
+# Session Info
+
+```{r}
+sessionInfo()
+```

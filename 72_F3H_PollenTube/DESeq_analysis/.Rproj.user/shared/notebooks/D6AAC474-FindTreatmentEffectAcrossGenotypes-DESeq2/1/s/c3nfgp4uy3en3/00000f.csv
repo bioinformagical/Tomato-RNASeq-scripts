@@ -1,0 +1,5 @@
+"0","assembly=""SL5"""
+"0","outfname=paste0(outfname_prefix,""-"",assembly,"".xlsx"")"
+"0","data_frames <- list(""15 minutes"" = SL5$res15, ""30 minutes"" = SL5$res30, "
+"0","                    ""45 minutes"" = SL5$res45,""75 minutes"" = SL5$res75 )"
+"0","write.xlsx(data_frames, file = outfname)"

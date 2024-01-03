@@ -1,0 +1,6 @@
+"0","counts = read.csv('results/muday-144-SL5_counts-salmon.txt',sep = ""\t"",stringsAsFactors = F,
+                  header=T, check.names = FALSE, row.names = ""gene_name"")
+"
+"2","Warning: cannot open file 'results/muday-144-SL5_counts-salmon.txt': No such file or directory"
+"2","Error in file(file, ""rt"") : cannot open the connection
+"

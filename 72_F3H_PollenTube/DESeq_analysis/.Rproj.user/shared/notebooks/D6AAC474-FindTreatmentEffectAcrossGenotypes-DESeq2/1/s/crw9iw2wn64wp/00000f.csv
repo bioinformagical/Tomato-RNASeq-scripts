@@ -1,0 +1,5 @@
+"0","dfs = list()"
+"0","for (assembly in assemblies) {"
+"0","  dfs[[assembly]]=getCounts(assembly=assembly,"
+"0","                            keep_description = T)"
+"0","}"
